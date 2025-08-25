@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Linq.Expressions;
+using System.Reflection;
 using MapZilla.Execution;
 using MapZilla.Features;
 using MapZilla.Internal;

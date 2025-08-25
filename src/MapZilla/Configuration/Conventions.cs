@@ -1,3 +1,5 @@
+using System.ComponentModel;
+using System.Reflection;
 using MapZilla.Internal;
 
 namespace MapZilla.Configuration.Conventions;

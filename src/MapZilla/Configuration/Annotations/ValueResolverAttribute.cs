@@ -1,4 +1,6 @@
-﻿namespace MapZilla.Configuration.Annotations;
+﻿using System.Reflection;
+
+namespace MapZilla.Configuration.Annotations;
 
 /// <summary>
 /// Map destination member using a custom value resolver.

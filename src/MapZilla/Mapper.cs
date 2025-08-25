@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using MapZilla.Internal;
+using MapZilla.QueryableExtensions;
 
 namespace MapZilla;
 

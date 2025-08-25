@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Reflection;
+
 namespace MapZilla.Configuration;
 public interface ISourceMemberConfiguration
 {

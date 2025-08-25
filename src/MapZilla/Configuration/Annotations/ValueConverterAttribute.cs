@@ -1,4 +1,6 @@
-﻿namespace MapZilla.Configuration.Annotations;
+﻿using System.Reflection;
+
+namespace MapZilla.Configuration.Annotations;
 
 /// <summary>
 /// Specify a value converter type to convert from the matching source member to the destination member

@@ -1,3 +1,7 @@
+using System.ComponentModel;
+using System.Linq.Expressions;
+using System.Reflection;
+
 namespace MapZilla.Internal;
 [EditorBrowsable(EditorBrowsableState.Never)]
 public static class ReflectionHelper

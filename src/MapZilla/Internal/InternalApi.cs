@@ -1,4 +1,7 @@
-﻿using MapZilla.Configuration;
+﻿using System.ComponentModel;
+using System.Linq.Expressions;
+using System.Reflection;
+using MapZilla.Configuration;
 using MapZilla.Configuration.Conventions;
 using MapZilla.Execution;
 using MapZilla.Features;

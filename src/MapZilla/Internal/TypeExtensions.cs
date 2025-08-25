@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Dynamic;
+using System.Reflection;
+
 namespace MapZilla.Internal;
 public static class TypeExtensions
 {

@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using MapZilla.Configuration;
 using MapZilla.Configuration.Conventions;
@@ -180,7 +181,7 @@ public class Profile : IProfileExpressionInternal, IProfileConfiguration
     {
         _sourceExtensionMethods ??= [];
         _sourceExtensionMethods.AddRange(
-            type.GetMethods(Internal.TypeExtensions.StaticFlags).Where(m => m.Has<ExtensionAttribute>() && m.GetParameters().Length == 1));
+            type.GetMethods((BindingFlags)Internal.TypeExtensions.StaticFlags).Where(m => m.Has<ExtensionAttribute>() && m.GetParameters().Length == 1));
     }
 }
 public readonly record struct PropertyMapAction(Func<PropertyMap, bool> Condition, Action<PropertyMap, IMemberConfigurationExpression> Action);

@@ -1,4 +1,6 @@
-﻿namespace MapZilla.Internal.Mappers;
+﻿using System.Linq.Expressions;
+
+namespace MapZilla.Internal.Mappers;
 public sealed class ConvertMapper : IObjectMapper
 {
     public static bool IsPrimitive(Type type) => type.IsPrimitive || type == typeof(string) || type == typeof(decimal);

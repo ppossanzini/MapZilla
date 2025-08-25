@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using MapZilla.Internal;
 using MapZilla.Internal.Mappers;
 

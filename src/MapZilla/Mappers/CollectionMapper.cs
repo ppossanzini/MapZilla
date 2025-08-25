@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Linq.Expressions;
+using System.Reflection;
 using MapZilla.Execution;
 
 namespace MapZilla.Internal.Mappers;

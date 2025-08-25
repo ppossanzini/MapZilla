@@ -1,4 +1,6 @@
-﻿namespace MapZilla.Configuration.Annotations;
+﻿using MapZilla.Internal;
+
+namespace MapZilla.Configuration.Annotations;
 
 /// <summary>
 /// Specify the source member to map from. Can only reference a member on the <see cref="MapFromAttribute.SourceType" /> type

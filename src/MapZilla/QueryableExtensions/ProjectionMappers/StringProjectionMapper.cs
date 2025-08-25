@@ -1,3 +1,5 @@
+using System.ComponentModel;
+using System.Linq.Expressions;
 using MapZilla.Internal;
 
 namespace MapZilla.QueryableExtensions.Impl;
