@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.BuiltInTypes;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.BuiltInTypes;
 
 public class DateTimeToNullableDateTime : IntegrationTest<DateTimeToNullableDateTime.DatabaseInitializer>
 {

@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests
+using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace NestedContainers
     {
-        public class When_specifying_a_custom_contextual_constructor : AutoMapperSpecBase
+        public class When_specifying_a_custom_contextual_constructor : MapZillaSpecBase
         {
             private Dest _dest;
 
@@ -72,7 +74,7 @@ namespace AutoMapper.UnitTests
             }
         }
 
-        public class When_specifying_a_custom_contextual_constructor_for_type_converters : AutoMapperSpecBase
+        public class When_specifying_a_custom_contextual_constructor_for_type_converters : MapZillaSpecBase
         {
             private Dest _dest;
 

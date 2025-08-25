@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullableEnums : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullableEnums : MapZillaSpecBase
 {
     public class Src { public EnumType? A { get; set; } }
     public class Dst { public EnumType? A { get; set; } }

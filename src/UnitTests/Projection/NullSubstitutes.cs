@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class NullSubstitutes : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class NullSubstitutes : MapZillaSpecBase
 {
     private List<Dest> _dests;
 
@@ -32,7 +34,7 @@ public class NullSubstitutes : AutoMapperSpecBase
     }
 }
 
-public class NullSubstitutesWithMapFrom : AutoMapperSpecBase
+public class NullSubstitutesWithMapFrom : MapZillaSpecBase
 {
     private List<Dest> _dests;
 

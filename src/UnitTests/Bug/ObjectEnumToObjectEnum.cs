@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class ObjectEnumToObjectEnum : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ObjectEnumToObjectEnum : MapZillaSpecBase
 {
     Target _target;
 

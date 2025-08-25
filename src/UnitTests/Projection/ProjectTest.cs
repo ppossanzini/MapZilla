@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class ProjectWithFields : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class ProjectWithFields : MapZillaSpecBase
 {
     public class Foo
     {

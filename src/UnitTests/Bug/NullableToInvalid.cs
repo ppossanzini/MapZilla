@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 public class NullableToInvalid : NonValidatingSpecBase
 {
@@ -24,6 +26,6 @@ public class NullableToInvalid : NonValidatingSpecBase
     [Fact]
     public void Should_not_validate()
     {
-        new Action(AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>();
+        new Action(AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>();
     }
 }

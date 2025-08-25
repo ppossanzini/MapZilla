@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests;
 public class ICollectionAggregateProjections : IntegrationTest<ICollectionAggregateProjections.DatabaseInitializer>
 {
     public class Customer

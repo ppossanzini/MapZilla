@@ -1,6 +1,8 @@
-﻿using AutoMapper.Internal.Mappers;
+﻿using MapZilla.Internal.Mappers;
 using System.Globalization;
-namespace AutoMapper.UnitTests.Mappers;
+using MapZilla;
+
+namespace MapZilla.UnitTests.Mappers;
 using static TypeDescriptor;
 public class When_specifying_mapping_with_the_BCL_type_converter_class : NonValidatingSpecBase
 {
@@ -38,7 +40,7 @@ public class When_specifying_mapping_with_the_BCL_type_converter_class : NonVali
         }
     }
 }
-public class When_adding_a_custom_mapper : AutoMapperSpecBase
+public class When_adding_a_custom_mapper : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {
@@ -92,7 +94,7 @@ public class When_adding_a_custom_mapper : AutoMapperSpecBase
     public void Validate() => AssertConfigurationIsValid();
 }
 
-public class When_adding_a_simple_custom_mapper : AutoMapperSpecBase
+public class When_adding_a_simple_custom_mapper : MapZillaSpecBase
 {
     ClassB _destination;
 
@@ -151,7 +153,7 @@ public class When_adding_a_simple_custom_mapper : AutoMapperSpecBase
     }
 }
 
-public class When_adding_an_object_based_custom_mapper : AutoMapperSpecBase
+public class When_adding_an_object_based_custom_mapper : MapZillaSpecBase
 {
     Destination _destination;
 

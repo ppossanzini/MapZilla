@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullableResolveUsing : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullableResolveUsing : MapZillaSpecBase
 {
     private Destination _destination;
 

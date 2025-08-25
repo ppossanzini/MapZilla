@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class ByrefConstructorParameter : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ByrefConstructorParameter : MapZillaSpecBase
 {
     private Destination _destination;
 

@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Projection;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
 public class NonGenericProjectEnumTest
 {
     private MapperConfiguration _config;
@@ -96,7 +98,7 @@ public class NonGenericProjectAndMapEnumTest
     }
 }
 
-public class NonGenericProjectionOverrides : AutoMapperSpecBase
+public class NonGenericProjectionOverrides : MapZillaSpecBase
 {
     public class Source
     {

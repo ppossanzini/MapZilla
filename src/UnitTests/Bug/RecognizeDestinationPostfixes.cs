@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class RecognizeDestinationPostfixes : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class RecognizeDestinationPostfixes : MapZillaSpecBase
 {
     class Person
     {

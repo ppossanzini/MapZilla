@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Projection;
+﻿using MapZilla;
 
-public class NonNullableToNullable : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Projection;
+
+public class NonNullableToNullable : MapZillaSpecBase
 {
     class Source
     {
@@ -14,7 +16,7 @@ public class NonNullableToNullable : AutoMapperSpecBase
     [Fact]
     public void Should_project() => ProjectTo<Destination>(new[] { new Source() }.AsQueryable()).First().Id.ShouldBe(0);
 }
-public class InMemoryMapObjectPropertyFromSubQuery : AutoMapperSpecBase
+public class InMemoryMapObjectPropertyFromSubQuery : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

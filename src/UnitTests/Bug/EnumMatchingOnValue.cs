@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class EnumMatchingOnValue : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class EnumMatchingOnValue : MapZillaSpecBase
 {
     private SecondClass _result;
 

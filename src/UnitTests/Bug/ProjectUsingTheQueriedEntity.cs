@@ -1,6 +1,9 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+using MapZilla.QueryableExtensions;
 
-public class ProjectUsingTheQueriedEntity : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ProjectUsingTheQueriedEntity : MapZillaSpecBase
 {
     private Destination _destination;
 

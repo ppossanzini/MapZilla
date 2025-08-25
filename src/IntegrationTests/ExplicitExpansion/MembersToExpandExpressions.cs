@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.IntegrationTests.ExplicitExpansion;
+﻿using MapZilla;
 
-public class MembersToExpandExpressions  : AutoMapperSpecBase, IAsyncLifetime
+namespace MapZilla.IntegrationTests.ExplicitExpansion;
+
+public class MembersToExpandExpressions  : MapZillaSpecBase, IAsyncLifetime
 {
     public class SourceDeepInner
     {

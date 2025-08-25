@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.ConditionalMapping;
+using MapZilla;
 
-public class When_adding_a_condition_for_all_members : AutoMapperSpecBase
+namespace MapZilla.UnitTests.ConditionalMapping;
+
+public class When_adding_a_condition_for_all_members : MapZillaSpecBase
 {
     Source _source = new Source { Value = 3 };
     Destination _destination = new Destination { Value = 7 };
@@ -30,7 +32,7 @@ public class When_adding_a_condition_for_all_members : AutoMapperSpecBase
     public void Should_work() => Mapper.Map(_source, _destination);
 }
 
-public class When_ignoring_all_properties_with_an_inaccessible_setter_and_explicitly_implemented_member : AutoMapperSpecBase
+public class When_ignoring_all_properties_with_an_inaccessible_setter_and_explicitly_implemented_member : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(c => c.CreateMap<SourceClass, DestinationClass>().IgnoreAllPropertiesWithAnInaccessibleSetter());
 
@@ -56,7 +58,7 @@ public class When_ignoring_all_properties_with_an_inaccessible_setter_and_explic
     public void Validate() => AssertConfigurationIsValid();
 }
 
-public class When_configuring_a_member_to_skip_based_on_the_property_value : AutoMapperSpecBase
+public class When_configuring_a_member_to_skip_based_on_the_property_value : MapZillaSpecBase
 {
     public class Source
     {
@@ -91,7 +93,7 @@ public class When_configuring_a_member_to_skip_based_on_the_property_value : Aut
     }
 }
 
-public class When_configuring_a_member_to_skip_based_on_the_property_value_with_custom_mapping : AutoMapperSpecBase
+public class When_configuring_a_member_to_skip_based_on_the_property_value_with_custom_mapping : MapZillaSpecBase
 {
     public class Source
     {
@@ -128,7 +130,7 @@ public class When_configuring_a_member_to_skip_based_on_the_property_value_with_
     }
 }
 
-public class When_configuring_a_map_to_ignore_all_properties_with_an_inaccessible_setter : AutoMapperSpecBase
+public class When_configuring_a_map_to_ignore_all_properties_with_an_inaccessible_setter : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -180,7 +182,7 @@ public class When_configuring_a_map_to_ignore_all_properties_with_an_inaccessibl
     [Fact]
     public void Should_consider_the_configuration_valid_even_if_some_properties_with_an_inaccessible_setter_are_unmapped()
     {
-        typeof(AutoMapperConfigurationException).ShouldNotBeThrownBy(AssertConfigurationIsValid);
+        typeof(MapZillaConfigurationException).ShouldNotBeThrownBy(AssertConfigurationIsValid);
     }
 
     [Fact]
@@ -202,7 +204,7 @@ public class When_configuring_a_map_to_ignore_all_properties_with_an_inaccessibl
     }
 }
 
-public class When_configuring_a_reverse_map_to_ignore_all_source_properties_with_an_inaccessible_setter : AutoMapperSpecBase
+public class When_configuring_a_reverse_map_to_ignore_all_source_properties_with_an_inaccessible_setter : MapZillaSpecBase
 {
     private Destination _destination;
     private Source _source;
@@ -260,7 +262,7 @@ public class When_configuring_a_reverse_map_to_ignore_all_source_properties_with
     [Fact]
     public void Should_consider_the_configuration_valid_even_if_some_properties_with_an_inaccessible_setter_are_unmapped()
     {
-        typeof(AutoMapperConfigurationException).ShouldNotBeThrownBy(AssertConfigurationIsValid);
+        typeof(MapZillaConfigurationException).ShouldNotBeThrownBy(AssertConfigurationIsValid);
     }
 
     [Fact]

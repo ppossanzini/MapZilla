@@ -1,8 +1,10 @@
-﻿namespace AutoMapper.UnitTests.Bug
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace NullableConverterBug
     {
-        namespace AutoMapperIssue
+        namespace MapZillaIssue
         {
             public class TestProblem
             {

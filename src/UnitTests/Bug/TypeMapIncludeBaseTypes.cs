@@ -1,4 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+using MapZilla.Internal;
+
+namespace MapZilla.UnitTests.Bug;
 
 public abstract class TypeMapIncludeBaseTypes
 {

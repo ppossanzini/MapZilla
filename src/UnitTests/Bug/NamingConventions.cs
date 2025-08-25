@@ -1,4 +1,7 @@
-namespace AutoMapper.UnitTests.Bug.NamingConventions;
+using MapZilla;
+using MapZilla.Internal;
+
+namespace MapZilla.UnitTests.Bug.NamingConventions;
 
 public class RemoveNameSplitMapper : NonValidatingSpecBase
 {
@@ -20,7 +23,7 @@ public class RemoveNameSplitMapper : NonValidatingSpecBase
         c.CreateMap<Source, Destination>();
     });
     [Fact]
-    public void Should_not_validate() => Should.Throw<AutoMapperConfigurationException>(AssertConfigurationIsValid)
+    public void Should_not_validate() => Should.Throw<MapZillaConfigurationException>(AssertConfigurationIsValid)
         .Errors.Single().UnmappedPropertyNames.Single().ShouldBe(nameof(Destination.InnerSourceValue));
 }
 public class DisableNamingConvention : NonValidatingSpecBase
@@ -41,7 +44,7 @@ public class DisableNamingConvention : NonValidatingSpecBase
     });
     [Fact]
     public void Should_not_use_pascal_naming_convention() =>
-        new Action(Mapper.ConfigurationProvider.AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>()
+        new Action(Mapper.ConfigurationProvider.AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>()
             .Errors[0].UnmappedPropertyNames.ShouldContain("COMPANY_Name");
 }
 public class Neda
@@ -67,7 +70,7 @@ public class Dario
     public string JaSeZovemImenom { get; set; }
 }
 
-public class When_mapping_with_lowercase_naming_conventions_two_ways_in_profiles : AutoMapperSpecBase
+public class When_mapping_with_lowercase_naming_conventions_two_ways_in_profiles : MapZillaSpecBase
 {
     private Dario _dario;
     private Neda _neda;
@@ -105,7 +108,7 @@ public class When_mapping_with_lowercase_naming_conventions_two_ways_in_profiles
     }
 }
 
-public class When_mapping_with_lowercase_naming_conventions_two_ways : AutoMapperSpecBase
+public class When_mapping_with_lowercase_naming_conventions_two_ways : MapZillaSpecBase
 {
     private Dario _dario;
     private Neda _neda;

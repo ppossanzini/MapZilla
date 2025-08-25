@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class When_specifying_a_type_converter_implementing_multiple_type_converter_interfaces : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class When_specifying_a_type_converter_implementing_multiple_type_converter_interfaces : MapZillaSpecBase
     {
         private DestinationFoo _resultFoo;
         private DestinationBar _resultBar;

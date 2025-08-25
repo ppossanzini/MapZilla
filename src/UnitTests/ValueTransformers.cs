@@ -1,8 +1,10 @@
-﻿namespace AutoMapper.UnitTests
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace ValueTransformers
     {
-        public class BasicTransforming : AutoMapperSpecBase
+        public class BasicTransforming : MapZillaSpecBase
         {
             public class Source
             {
@@ -33,7 +35,7 @@
             }
         }
 
-        public class StackingTransformers : AutoMapperSpecBase
+        public class StackingTransformers : MapZillaSpecBase
         {
             public class Source
             {
@@ -65,7 +67,7 @@
             }
         }
 
-        public class DifferentProfiles : AutoMapperSpecBase
+        public class DifferentProfiles : MapZillaSpecBase
         {
             public class Source
             {
@@ -97,7 +99,7 @@
             }
         }
 
-        public class StackingRootConfigAndProfileTransform : AutoMapperSpecBase
+        public class StackingRootConfigAndProfileTransform : MapZillaSpecBase
         {
             public class Source
             {
@@ -132,7 +134,7 @@
             }
         }
 
-        public class TransformingValueTypes : AutoMapperSpecBase
+        public class TransformingValueTypes : MapZillaSpecBase
         {
             public class Source
             {
@@ -167,7 +169,7 @@
             }
         }
 
-        public class StackingRootAndProfileAndMemberConfig : AutoMapperSpecBase
+        public class StackingRootAndProfileAndMemberConfig : MapZillaSpecBase
         {
             public class Source
             {
@@ -203,7 +205,7 @@
             }
         }
 
-        public class StackingTypeMapAndRootAndProfileAndMemberConfig : AutoMapperSpecBase
+        public class StackingTypeMapAndRootAndProfileAndMemberConfig : MapZillaSpecBase
         {
             public class Source
             {
@@ -240,7 +242,7 @@
             }
         }
     }
-    public class TransformingInheritance : AutoMapperSpecBase
+    public class TransformingInheritance : MapZillaSpecBase
     {
         public class SourceBase
         {
@@ -279,7 +281,7 @@
         }
     }
 
-    public class TransformingInheritanceForMember : AutoMapperSpecBase
+    public class TransformingInheritanceForMember : MapZillaSpecBase
     {
         public class SourceBase
         {
@@ -317,7 +319,7 @@
             dest.Value.ShouldBe("Jimmy was cool and now is straight up dope");
         }
     }
-    public class TransformingNullable : AutoMapperSpecBase
+    public class TransformingNullable : MapZillaSpecBase
     {
         public class Source
         {
@@ -342,7 +344,7 @@
             dest.NotNull.ShouldBe(2);
         }
     }
-    public class NonGenericMemberTransformer : AutoMapperSpecBase
+    public class NonGenericMemberTransformer : MapZillaSpecBase
     {
         public class Source
         {
@@ -362,7 +364,7 @@
             dest.Value.ShouldBe("value and more");
         }
 
-        public class ConstructorTransforming : AutoMapperSpecBase
+        public class ConstructorTransforming : MapZillaSpecBase
         {
             public class Source
             {

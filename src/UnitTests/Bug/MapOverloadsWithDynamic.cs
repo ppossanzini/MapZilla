@@ -1,8 +1,9 @@
 ﻿using System.Dynamic;
+using MapZilla;
 
-namespace AutoMapper.UnitTests.Bug;
+namespace MapZilla.UnitTests.Bug;
 
-public class MapOverloadsWithDynamic : AutoMapperSpecBase
+public class MapOverloadsWithDynamic : MapZillaSpecBase
 {
     Settings _settings;
 

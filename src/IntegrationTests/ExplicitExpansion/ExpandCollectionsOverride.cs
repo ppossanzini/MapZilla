@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.ExplicitExpansion;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.ExplicitExpansion;
 
 public class ExpandCollectionsOverride : IntegrationTest<ExpandCollectionsOverride.DatabaseInitializer>
 {

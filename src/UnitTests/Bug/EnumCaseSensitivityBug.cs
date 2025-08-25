@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Bug;
-public class EnumCaseSensitivityBug : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
+public class EnumCaseSensitivityBug : MapZillaSpecBase
 {
     private SecondEnum _resultSecondEnum;
     private FirstEnum _resultFirstEnum;

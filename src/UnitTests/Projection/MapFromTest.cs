@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Projection.MapFromTest;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection.MapFromTest;
 
 public class CustomMapFromExpressionTest
 {
@@ -47,7 +49,7 @@ public class CustomMapFromExpressionTest
         result.FullName.ShouldBe("Hallo");
     }
 }
-public class When_mapping_from_and_source_member_both_can_work : AutoMapperSpecBase
+public class When_mapping_from_and_source_member_both_can_work : MapZillaSpecBase
 {
     Dto _destination;
 
@@ -74,7 +76,7 @@ public class When_mapping_from_and_source_member_both_can_work : AutoMapperSpecB
         _destination.ShortDescription.ShouldBe("mappedFrom");
     }
 }
-public class When_mapping_from_chained_properties : AutoMapperSpecBase
+public class When_mapping_from_chained_properties : MapZillaSpecBase
 {
     class Model
     {
@@ -93,7 +95,7 @@ public class When_mapping_from_chained_properties : AutoMapperSpecBase
     [Fact]
     public void Should_map_ok() => Map<Dto>(new Model { Inner = new InnerModel("mappedFrom") }).Value.ShouldBe("mappedFrom");
 }
-public class When_mapping_from_private_method : AutoMapperSpecBase
+public class When_mapping_from_private_method : MapZillaSpecBase
 {
     class Model
     {

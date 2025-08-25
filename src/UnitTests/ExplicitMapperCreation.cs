@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests;
-public class ExplicitMapperCreation : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
+public class ExplicitMapperCreation : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() =>new(cfg => cfg.CreateMap<Source, Dest>());
     public class Source

@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace ContextValuesIncorrect
     {
@@ -14,7 +16,7 @@
             public int? Value2 { get; set; }
         }
 
-        public class When_conditionally_skipping_null_destination_values : AutoMapperSpecBase
+        public class When_conditionally_skipping_null_destination_values : MapZillaSpecBase
         {
             private FooDto _destination;
 

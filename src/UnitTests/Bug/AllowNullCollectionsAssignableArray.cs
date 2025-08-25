@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class AllowNullCollectionsAssignableArray : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class AllowNullCollectionsAssignableArray : MapZillaSpecBase
 {
     private Destination _destination;
 

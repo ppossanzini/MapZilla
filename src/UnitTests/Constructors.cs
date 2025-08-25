@@ -1,22 +1,24 @@
-﻿namespace AutoMapper.UnitTests.Constructors;
-public class RecordConstructorValidation : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Constructors;
+public class RecordConstructorValidation : MapZillaSpecBase
 {
     record Destination(int Value) { }
     protected override MapperConfiguration CreateConfiguration() => new(c => c.CreateMap<string, Destination>());
     [Fact]
-    public void Validate() => new Action(AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>().Message.
+    public void Validate() => new Action(AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>().Message.
         ShouldContainWithoutWhitespace("When mapping to records, consider using only public constructors.");
 }
-public class RecordConstructorValidationForCtorParam : AutoMapperSpecBase
+public class RecordConstructorValidationForCtorParam : MapZillaSpecBase
 {
     record Destination(int Value, int Other){}
     protected override MapperConfiguration CreateConfiguration() => new(c =>
         c.CreateMap<string, Destination>().ForCtorParam(nameof(Destination.Value), o => o.MapFrom(s => 0)));
     [Fact]
-    public void Validate() => new Action(AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>().Message.
+    public void Validate() => new Action(AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>().Message.
         ShouldContainWithoutWhitespace("When mapping to records, consider using only public constructors.");
 }
-public class ConstructorValidation : AutoMapperSpecBase
+public class ConstructorValidation : MapZillaSpecBase
 {
     class Source
     {
@@ -32,7 +34,7 @@ public class ConstructorValidation : AutoMapperSpecBase
     [Fact]
     public void Validate() => AssertConfigurationIsValid();
 }
-public class Nullable_enum_default_value : AutoMapperSpecBase
+public class Nullable_enum_default_value : MapZillaSpecBase
 {
     public enum SourceEnum { A, B }
     public class Source
@@ -52,7 +54,7 @@ public class Nullable_enum_default_value : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Mapper.Map<Target>(new Source { Enum = SourceEnum.B }).Enum.ShouldBe(TargetEnum.B);
 }
-public class Nullable_enum_default_value_null : AutoMapperSpecBase
+public class Nullable_enum_default_value_null : MapZillaSpecBase
 {
     public class Source
     {
@@ -70,7 +72,7 @@ public class Nullable_enum_default_value_null : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Mapper.Map<Target>(new Source()).Enum.ShouldBeNull();
 }
-public class Nullable_enum_default_value_not_null : AutoMapperSpecBase
+public class Nullable_enum_default_value_not_null : MapZillaSpecBase
 {
     public class Source
     {
@@ -88,7 +90,7 @@ public class Nullable_enum_default_value_not_null : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Mapper.Map<Target>(new Source()).Enum.ShouldBe(TargetEnum.B);
 }
-public class Dynamic_constructor_mapping : AutoMapperSpecBase
+public class Dynamic_constructor_mapping : MapZillaSpecBase
 {
     public class ParentDTO<T>
     {
@@ -153,7 +155,7 @@ public class Dynamic_constructor_mapping : AutoMapperSpecBase
     }
 }
 
-public class Constructor_mapping_without_preserve_references : AutoMapperSpecBase
+public class Constructor_mapping_without_preserve_references : MapZillaSpecBase
 {
     public class ParentDTO
     {
@@ -218,7 +220,7 @@ public class Constructor_mapping_without_preserve_references : AutoMapperSpecBas
     }
 }
 
-public class Preserve_references_with_constructor_mapping : AutoMapperSpecBase
+public class Preserve_references_with_constructor_mapping : MapZillaSpecBase
 {
     public class ParentDTO
     {
@@ -285,7 +287,7 @@ public class Preserve_references_with_constructor_mapping : AutoMapperSpecBase
     }
 }
 
-public class When_construct_mapping_a_struct_with_string : AutoMapperSpecBase
+public class When_construct_mapping_a_struct_with_string : MapZillaSpecBase
 {
     public struct Source
     {
@@ -316,7 +318,7 @@ public class When_construct_mapping_a_struct_with_string : AutoMapperSpecBase
     }
 }
 
-public class When_construct_mapping_a_struct : AutoMapperSpecBase
+public class When_construct_mapping_a_struct : MapZillaSpecBase
 {
     public class Dto
     {
@@ -362,7 +364,7 @@ public class When_construct_mapping_a_struct : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_an_abstract_type : AutoMapperSpecBase
+public class When_mapping_to_an_abstract_type : MapZillaSpecBase
 {
     class Source
     {
@@ -383,7 +385,7 @@ public class When_mapping_to_an_abstract_type : AutoMapperSpecBase
     }
 }
 
-public class When_a_constructor_with_extra_parameters_doesnt_match : AutoMapperSpecBase
+public class When_a_constructor_with_extra_parameters_doesnt_match : MapZillaSpecBase
 {
     PersonTarget _destination;
 
@@ -426,7 +428,7 @@ public class When_a_constructor_with_extra_parameters_doesnt_match : AutoMapperS
     }
 }
 
-public class When_renaming_class_constructor_parameter : AutoMapperSpecBase
+public class When_renaming_class_constructor_parameter : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -473,7 +475,7 @@ public class When_renaming_class_constructor_parameter : AutoMapperSpecBase
     }
 }
 
-public class When_constructor_matches_with_prefix_and_postfix : AutoMapperSpecBase
+public class When_constructor_matches_with_prefix_and_postfix : MapZillaSpecBase
 {
     PersonDto _destination;
 
@@ -514,7 +516,7 @@ public class When_constructor_matches_with_prefix_and_postfix : AutoMapperSpecBa
     }
 }
 
-public class When_constructor_matches_with_destination_prefix_and_postfix : AutoMapperSpecBase
+public class When_constructor_matches_with_destination_prefix_and_postfix : MapZillaSpecBase
 {
     PersonDto _destination;
 
@@ -555,7 +557,7 @@ public class When_constructor_matches_with_destination_prefix_and_postfix : Auto
     }
 }
 
-public class When_constructor_matches_but_is_overriden_by_ConstructUsing : AutoMapperSpecBase
+public class When_constructor_matches_but_is_overriden_by_ConstructUsing : MapZillaSpecBase
 {
     PersonDto _destination;
 
@@ -593,7 +595,7 @@ public class When_constructor_matches_but_is_overriden_by_ConstructUsing : AutoM
     }
 }
 
-public class When_constructor_is_match_with_default_value : AutoMapperSpecBase
+public class When_constructor_is_match_with_default_value : MapZillaSpecBase
 {
     PersonDto _destination;
 
@@ -626,7 +628,7 @@ public class When_constructor_is_match_with_default_value : AutoMapperSpecBase
     }
 }
 
-public class When_constructor_is_partial_match_with_value_type : AutoMapperSpecBase
+public class When_constructor_is_partial_match_with_value_type : MapZillaSpecBase
 {
     GeoCoordinate _destination;
 
@@ -676,7 +678,7 @@ public class When_constructor_is_partial_match_with_value_type : AutoMapperSpecB
     }
 }
 
-public class When_constructor_is_partial_match : AutoMapperSpecBase
+public class When_constructor_is_partial_match : MapZillaSpecBase
 {
     GeoCoordinate _destination;
 
@@ -737,7 +739,7 @@ public class When_constructor_is_partial_match : AutoMapperSpecBase
     }
 }
 
-public class When_constructor_matches_but_the_destination_is_passed : AutoMapperSpecBase
+public class When_constructor_matches_but_the_destination_is_passed : MapZillaSpecBase
 {
     Destination _destination = new Destination();
 
@@ -789,7 +791,7 @@ public class When_constructor_matches_but_the_destination_is_passed : AutoMapper
     }
 }
 
-public class When_mapping_through_constructor_and_destination_has_setter : AutoMapperSpecBase
+public class When_mapping_through_constructor_and_destination_has_setter : MapZillaSpecBase
 {
     public class Source
     {
@@ -843,7 +845,7 @@ public class When_mapping_through_constructor_and_destination_has_setter : AutoM
     }
 }
 
-public class When_mapping_an_optional_GUID_constructor : AutoMapperSpecBase
+public class When_mapping_an_optional_GUID_constructor : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -872,7 +874,7 @@ public class When_mapping_an_optional_GUID_constructor : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_a_constructor_parameter_from_nested_members : AutoMapperSpecBase
+public class When_mapping_a_constructor_parameter_from_nested_members : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -913,7 +915,7 @@ public class When_mapping_a_constructor_parameter_from_nested_members : AutoMapp
     }
 }
 
-public class When_the_destination_has_a_matching_constructor_with_optional_extra_parameters : AutoMapperSpecBase
+public class When_the_destination_has_a_matching_constructor_with_optional_extra_parameters : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -990,12 +992,12 @@ public class When_mapping_constructor_argument_fails : NonValidatingSpecBase
     [Fact]
     public void Should_say_what_parameter_fails()
     {
-        var ex = new Action(AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>();
+        var ex = new Action(AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>();
         ex.Message.ShouldContain("Void .ctor(Dest), parameter foo", Case.Sensitive);
     }
 }
 
-public class When_mapping_to_an_object_with_a_constructor_with_a_matching_argument : AutoMapperSpecBase
+public class When_mapping_to_an_object_with_a_constructor_with_a_matching_argument : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -1049,7 +1051,7 @@ public class When_mapping_to_an_object_with_a_constructor_with_a_matching_argume
     }
 }
 
-public class When_mapping_to_an_object_with_a_private_constructor : AutoMapperSpecBase
+public class When_mapping_to_an_object_with_a_private_constructor : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -1090,7 +1092,7 @@ public class When_mapping_to_an_object_with_a_private_constructor : AutoMapperSp
     }
 }
 
-public class When_mapping_to_an_object_using_service_location : AutoMapperSpecBase
+public class When_mapping_to_an_object_using_service_location : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -1140,7 +1142,7 @@ public class When_mapping_to_an_object_using_service_location : AutoMapperSpecBa
     }
 }
 
-public class When_mapping_to_an_object_using_contextual_service_location : AutoMapperSpecBase
+public class When_mapping_to_an_object_using_contextual_service_location : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -1190,7 +1192,7 @@ public class When_mapping_to_an_object_using_contextual_service_location : AutoM
     }
 }
 
-public class When_mapping_to_an_object_with_multiple_constructors_and_constructor_mapping_is_disabled : AutoMapperSpecBase
+public class When_mapping_to_an_object_with_multiple_constructors_and_constructor_mapping_is_disabled : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -1232,7 +1234,7 @@ public class When_mapping_to_an_object_with_multiple_constructors_and_constructo
         _dest.Bar.ShouldBe(10);
     }
 }
-public class When_mapping_with_optional_parameters_and_constructor_mapping_is_disabled : AutoMapperSpecBase
+public class When_mapping_with_optional_parameters_and_constructor_mapping_is_disabled : MapZillaSpecBase
 {
     public class Destination
     {
@@ -1632,7 +1634,7 @@ public class When_mapping_to_an_object_with_a_constructor_with_string_optional_a
     }
 }
 
-public class When_configuring_ctor_param_members : AutoMapperSpecBase
+public class When_configuring_ctor_param_members : MapZillaSpecBase
 {
     public class Source
     {
@@ -1663,7 +1665,7 @@ public class When_configuring_ctor_param_members : AutoMapperSpecBase
     }
 }
 
-public class When_configuring_nullable_ctor_param_members : AutoMapperSpecBase
+public class When_configuring_nullable_ctor_param_members : MapZillaSpecBase
 {
     public class Source
     {
@@ -1694,7 +1696,7 @@ public class When_configuring_nullable_ctor_param_members : AutoMapperSpecBase
     }
 }
 
-public class When_configuring_ctor_param_members_without_source_property_1 : AutoMapperSpecBase
+public class When_configuring_ctor_param_members_without_source_property_1 : MapZillaSpecBase
 {
     public class Source
     {
@@ -1759,7 +1761,7 @@ public class When_configuring_ctor_param_members_without_source_property_1 : Aut
     }
 }
 
-public class When_configuring_ctor_param_members_without_source_property_2 : AutoMapperSpecBase
+public class When_configuring_ctor_param_members_without_source_property_2 : MapZillaSpecBase
 {
     public class Source
     {

@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests;
 public class ConstructorDefaultValue : IntegrationTest<ConstructorDefaultValue.DatabaseInitializer>
 {
     public class Customer

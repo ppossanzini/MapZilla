@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.Inheritance;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.Inheritance;
 
 public class ProjectToAbstractTypeWithInheritance : IntegrationTest<ProjectToAbstractTypeWithInheritance.DatabaseInitializer>
 {

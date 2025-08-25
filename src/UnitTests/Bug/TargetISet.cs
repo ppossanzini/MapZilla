@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class TargetISet : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class TargetISet : MapZillaSpecBase
 {
     Destination _destination;
     string[] _items = new[] { "one", "two", "three" };

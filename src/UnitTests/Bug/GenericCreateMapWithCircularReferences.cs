@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class GenericCreateMapsWithCircularReference : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class GenericCreateMapsWithCircularReference : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

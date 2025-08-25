@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 public class SelectiveConfigurationValidation : NonValidatingSpecBase
 {
     public class GoodSrc { }
@@ -39,7 +41,7 @@ public class SelectiveConfigurationValidation : NonValidatingSpecBase
     [Fact]
     public void Should_pass_specific_profile_assertion()
     {
-        typeof(AutoMapperConfigurationException)
+        typeof(MapZillaConfigurationException)
             .ShouldNotBeThrownBy(AssertConfigurationIsValid<GoodProfile>);
     }
 }

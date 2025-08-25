@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class SequenceContainsNoElementsTest : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class SequenceContainsNoElementsTest : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

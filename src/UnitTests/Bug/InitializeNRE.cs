@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class InitializeNRE2 : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class InitializeNRE2 : MapZillaSpecBase
 {
     public interface IRes : IValueResolver<Source, Destination, int>
     {
@@ -33,7 +35,7 @@ public class InitializeNRE2 : AutoMapperSpecBase
 }
 
 
-public class InitializeNRE : AutoMapperSpecBase
+public class InitializeNRE : MapZillaSpecBase
 {
     public class TestEntity
     {

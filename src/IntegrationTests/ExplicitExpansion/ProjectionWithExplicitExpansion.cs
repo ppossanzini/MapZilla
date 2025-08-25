@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using MapZilla;
 
-namespace AutoMapper.IntegrationTests.ExplicitExpansion;
+namespace MapZilla.IntegrationTests.ExplicitExpansion;
 
 public static class Ext
 {

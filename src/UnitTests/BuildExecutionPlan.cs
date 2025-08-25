@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests;
-public class BuildExecutionPlan : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
+public class BuildExecutionPlan : MapZillaSpecBase
 {
     Model _source;
     Dto _destination;
@@ -51,7 +53,7 @@ public class BuildExecutionPlan : AutoMapperSpecBase
         _destination.IntValue.ShouldBe(_source.IntValue.Value);
     }
 }
-public class When_reusing_the_execution_plan_inner_map : AutoMapperSpecBase
+public class When_reusing_the_execution_plan_inner_map : MapZillaSpecBase
 {
     class Source
     {
@@ -80,7 +82,7 @@ public class When_reusing_the_execution_plan_inner_map : AutoMapperSpecBase
         destination.Inner.ShouldBeNull();
     }
 }
-public class AllowNullWithMapAtRuntime : AutoMapperSpecBase
+public class AllowNullWithMapAtRuntime : MapZillaSpecBase
 {
     class Source
     {
@@ -108,7 +110,7 @@ public class AllowNullWithMapAtRuntime : AutoMapperSpecBase
         destination.Inner.ShouldBeNull();
     }
 }
-public class When_reusing_the_execution_plan : AutoMapperSpecBase
+public class When_reusing_the_execution_plan : MapZillaSpecBase
 {
     class Source
     {
@@ -139,7 +141,7 @@ public class When_reusing_the_execution_plan : AutoMapperSpecBase
         destination.String.ShouldBeNull();
     }
 }
-public class When_reusing_the_execution_plan_existing_destination : AutoMapperSpecBase
+public class When_reusing_the_execution_plan_existing_destination : MapZillaSpecBase
 {
     class Source
     {

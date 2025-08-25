@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 public class CannotConvertEnumToNullable
 {

@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests;
-public class ForCtorParamValidation : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
+public class ForCtorParamValidation : MapZillaSpecBase
 {
     record Source(float Value = 0);
     record Destination(DateTime Value);
@@ -8,7 +10,7 @@ public class ForCtorParamValidation : AutoMapperSpecBase
     [Fact]
     public void Should_map_ok() => Map<Destination>(new Source()).Value.ShouldBe(DateTime.MinValue);
 }
-public class ForCtorParam_MapFrom_String : AutoMapperSpecBase
+public class ForCtorParam_MapFrom_String : MapZillaSpecBase
 {
     public class Destination
     {
@@ -33,7 +35,7 @@ public class ForCtorParam_MapFrom_String : AutoMapperSpecBase
         destination.Value.ShouldBe("2");
     }
 }
-public class ForCtorParam_MapFrom_ProjectTo : AutoMapperSpecBase
+public class ForCtorParam_MapFrom_ProjectTo : MapZillaSpecBase
 {
     public class Source
     {
@@ -52,7 +54,7 @@ public class ForCtorParam_MapFrom_ProjectTo : AutoMapperSpecBase
         destination.Value.ShouldBe("Core");
     }
 }
-public class When_configuring__non_generic_ctor_param_members : AutoMapperSpecBase
+public class When_configuring__non_generic_ctor_param_members : MapZillaSpecBase
 {
     public class Source
     {
@@ -129,7 +131,7 @@ public class When_configuring__non_generic_ctor_param_members : AutoMapperSpecBa
                 .ForCtorParam("thing", opt => opt.MapFrom(src => src.Value))
                 .ForCtorParam("think", opt => opt.MapFrom(src => src.Value));
         });
-        configuration.ShouldThrowException<AutoMapperConfigurationException>(exception =>
+        configuration.ShouldThrowException<MapZillaConfigurationException>(exception =>
         {
             exception.Message.ShouldContain("does not have a matching constructor with a parameter named 'think'.", Case.Sensitive);
             exception.Message.ShouldContain(typeof(Dest).FullName, Case.Sensitive);
@@ -146,7 +148,7 @@ public class When_configuring__non_generic_ctor_param_members : AutoMapperSpecBa
                 .ForCtorParam("thing", opt => opt.MapFrom(src => src.Value));
         });
 
-        configuration.ShouldThrowException<AutoMapperConfigurationException>(exception =>
+        configuration.ShouldThrowException<MapZillaConfigurationException>(exception =>
         {
             exception.Message.ShouldContain("does not have a constructor.", Case.Sensitive);
             exception.Message.ShouldContain(typeof(Dest).FullName, Case.Sensitive);
@@ -162,7 +164,7 @@ public class When_configuring__non_generic_ctor_param_members : AutoMapperSpecBa
                 .ForCtorParam("think", opt => opt.MapFrom(src => src.Value));
         });
 
-        configuration.ShouldThrowException<AutoMapperConfigurationException>(exception =>
+        configuration.ShouldThrowException<MapZillaConfigurationException>(exception =>
         {
             exception.Message.ShouldContain("does not have a matching constructor with a parameter named 'think'.", Case.Sensitive);
             exception.Message.ShouldContain(typeof(Dest).FullName, Case.Sensitive);

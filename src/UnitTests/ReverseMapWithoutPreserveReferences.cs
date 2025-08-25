@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class ReverseMapWithoutPreserveReferences : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class ReverseMapWithoutPreserveReferences : MapZillaSpecBase
 {
     UserDto _destination;
 

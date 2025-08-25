@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Projection;
+﻿using MapZilla;
 
-public class RecursiveQuery : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Projection;
+
+public class RecursiveQuery : MapZillaSpecBase
 {
     class Source
     {

@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests
+using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace Regression
     {
@@ -16,7 +18,7 @@ namespace AutoMapper.UnitTests
         {
             public Guid Id { get; set; }
         }
-        public class automapper_fails_to_map_custom_mappings_when_mapping_collections_for_an_interface : AutoMapperSpecBase
+        public class MapZilla_fails_to_map_custom_mappings_when_mapping_collections_for_an_interface : MapZillaSpecBase
         {
             protected override MapperConfiguration CreateConfiguration() => new(cfg =>
             {
@@ -40,7 +42,7 @@ namespace AutoMapper.UnitTests
             }
         }
 
-        public class Chris_bennages_nullable_datetime_issue : AutoMapperSpecBase
+        public class Chris_bennages_nullable_datetime_issue : MapZillaSpecBase
         {
             private Destination _result;
 
@@ -95,7 +97,7 @@ namespace AutoMapper.UnitTests
             }
         }
 
-        public class TestEnumerable : AutoMapperSpecBase
+        public class TestEnumerable : MapZillaSpecBase
         {
             protected override MapperConfiguration CreateConfiguration() => new(cfg =>
             {

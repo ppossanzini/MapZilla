@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class ExplicitExpansion : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class ExplicitExpansion : MapZillaSpecBase
 {
     private Dest[] _dests;
 

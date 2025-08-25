@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class AddProfiles : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class AddProfiles : MapZillaSpecBase
 {
     public class Source { }
     public class Dest { }

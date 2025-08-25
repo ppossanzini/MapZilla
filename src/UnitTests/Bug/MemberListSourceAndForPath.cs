@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class MemberListSourceAndForPath : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class MemberListSourceAndForPath : MapZillaSpecBase
 {
     bool _equal;
 

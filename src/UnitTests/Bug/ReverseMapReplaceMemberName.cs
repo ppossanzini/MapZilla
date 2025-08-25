@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class ReverseMapAndReplaceMemberName : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ReverseMapAndReplaceMemberName : MapZillaSpecBase
 {
     const string SomeId = "someId";
     const string SomeOtherId = "someOtherId";
@@ -43,7 +45,7 @@ public class ReverseMapAndReplaceMemberName : AutoMapperSpecBase
     }
 }
 
-public class ReverseMapAndReplaceMemberNameWithProfile : AutoMapperSpecBase
+public class ReverseMapAndReplaceMemberNameWithProfile : MapZillaSpecBase
 {
     const string SomeId = "someId";
     const string SomeOtherId = "someOtherId";

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class ExistingArrays : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ExistingArrays : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

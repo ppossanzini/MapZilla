@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace AssemblyScanning
     {
@@ -44,16 +46,16 @@
 
         public class When_scanning_by_name : NonValidatingSpecBase
         {
-            private static readonly Assembly AutoMapperAssembly = typeof(When_scanning_by_name).Assembly;
+            private static readonly Assembly MapZillaAssembly = typeof(When_scanning_by_name).Assembly;
 
             protected override MapperConfiguration CreateConfiguration() => new(cfg =>
             {
                 AppDomain.CurrentDomain.AssemblyResolve += OnAssemblyResolve;
-                cfg.AddMaps(new[] { AutoMapperAssembly.FullName });
+                cfg.AddMaps(new[] { MapZillaAssembly.FullName });
                 AppDomain.CurrentDomain.AssemblyResolve -= OnAssemblyResolve;
             });
 
-            private static Assembly OnAssemblyResolve(object sender, ResolveEventArgs args) => args.Name == AutoMapperAssembly.FullName ? AutoMapperAssembly : null;
+            private static Assembly OnAssemblyResolve(object sender, ResolveEventArgs args) => args.Name == MapZillaAssembly.FullName ? MapZillaAssembly : null;
 
             [Fact]
             public void Should_load_profiles()

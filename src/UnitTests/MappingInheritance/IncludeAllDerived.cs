@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.MappingInheritance;
+﻿using MapZilla;
 
-public class IncludeAllDerived : AutoMapperSpecBase
+namespace MapZilla.UnitTests.MappingInheritance;
+
+public class IncludeAllDerived : MapZillaSpecBase
 {
     public class A
     {

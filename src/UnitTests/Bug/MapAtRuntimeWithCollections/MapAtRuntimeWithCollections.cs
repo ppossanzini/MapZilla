@@ -1,9 +1,10 @@
-﻿using OmmitedDatabaseModel3WithCollections;
+﻿using MapZilla;
+using OmmitedDatabaseModel3WithCollections;
 using OmmitedDTOModel3WithCollections;
 
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
-public class MapAtRuntimeWithCollections : AutoMapperSpecBase
+public class MapAtRuntimeWithCollections : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

@@ -1,8 +1,10 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 using StringKeyValuePair = KeyValuePair<string, string>;
 
-public class JsonNetDictionary : AutoMapperSpecBase
+public class JsonNetDictionary : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -52,7 +54,7 @@ public class JsonNetDictionary : AutoMapperSpecBase
     }
 }
 
-public class JObjectField : AutoMapperSpecBase
+public class JObjectField : MapZillaSpecBase
 {
     class JContainer : IEnumerable<DBNull>
     {

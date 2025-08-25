@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests;
 
 public class NullSubstitute : IntegrationTest<NullSubstitute.DatabaseInitializer>
 {

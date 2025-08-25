@@ -1,7 +1,8 @@
-using AutoMapper.Configuration;
-using AutoMapper.Internal.Mappers;
+using MapZilla;
+using MapZilla.Configuration;
+using MapZilla.Internal.Mappers;
 
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
 public class CustomValidations
 {
@@ -38,7 +39,7 @@ public class CustomValidations
                 cfg.CreateMap<Source, Dest>();
             });
 
-            new Action(config.AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>().Message.ShouldBe(nameof(When_using_custom_validation));
+            new Action(config.AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>().Message.ShouldBe(nameof(When_using_custom_validation));
 
             _calledForRoot.ShouldBeTrue();
             _calledForValues.ShouldBeTrue();
@@ -55,7 +56,7 @@ public class CustomValidations
                 context.Types.DestinationType.ShouldBe(typeof(Dest));
                 context.ObjectMapper.ShouldBeNull();
                 context.MemberMap.ShouldBeNull();
-                context.Exceptions.Add(new AutoMapperConfigurationException(nameof(When_using_custom_validation)));
+                context.Exceptions.Add(new MapZillaConfigurationException(nameof(When_using_custom_validation)));
             }
             else
             {

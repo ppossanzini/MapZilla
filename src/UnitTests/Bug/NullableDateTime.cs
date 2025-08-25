@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullableDateTimeMapFromArray : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullableDateTimeMapFromArray : MapZillaSpecBase
 {
     public class Source
     {
@@ -30,7 +32,7 @@ public class NullableDateTimeMapFromArray : AutoMapperSpecBase
     public void Validate() => AssertConfigurationIsValid();
 }
 
-public class FromDateToNullableDateTime : AutoMapperSpecBase
+public class FromDateToNullableDateTime : MapZillaSpecBase
 {
     Destination _destination;
     DateTime _date = new DateTime(1900, 1, 1);
@@ -64,7 +66,7 @@ public class FromDateToNullableDateTime : AutoMapperSpecBase
     }
 }
 
-public class NullableDateTime : AutoMapperSpecBase
+public class NullableDateTime : MapZillaSpecBase
 {
     Destination _destination;
     DateTime _date = new DateTime(1900, 1, 1);

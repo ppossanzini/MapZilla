@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NestedMappingProjectionsExplicitExpanding : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NestedMappingProjectionsExplicitExpanding : MapZillaSpecBase
 {
     Fu _destination;
     int _propValue = 23;

@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests;
-public class UsingEngineInsideMap : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
+public class UsingEngineInsideMap : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -43,7 +45,7 @@ public class UsingEngineInsideMap : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_null_with_context_mapper : AutoMapperSpecBase
+public class When_mapping_null_with_context_mapper : MapZillaSpecBase
 {
     class Source
     {

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class AfterMapNestedObjects : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class AfterMapNestedObjects : MapZillaSpecBase
 {
     bool _afterMapCalled;
 

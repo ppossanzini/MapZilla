@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.ExplicitExpansion;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.ExplicitExpansion;
 
 public class NestedExplicitExpandWithFields : IntegrationTest<NestedExplicitExpandWithFields.DatabaseInitializer>
 {
@@ -130,7 +132,7 @@ public class NestedExplicitExpandWithFields : IntegrationTest<NestedExplicitExpa
 
     public class Class3
     {
-        [System.ComponentModel.DataAnnotations.Key, System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute("Class2")]
+        [System.ComponentModel.DataAnnotations.Key, ForeignKey("Class2")]
         public int Id { get; set; }
         public string Name { get; set; }
 

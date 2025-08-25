@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class CollectionsNullability : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class CollectionsNullability : MapZillaSpecBase
 {
     Holder _destination;
 

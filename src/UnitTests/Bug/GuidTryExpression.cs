@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class GuidTryExpression : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class GuidTryExpression : MapZillaSpecBase
 {
     private Destination _destination;
     private Guid _value = Guid.NewGuid();

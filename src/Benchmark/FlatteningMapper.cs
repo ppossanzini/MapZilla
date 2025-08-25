@@ -1,4 +1,4 @@
-using AutoMapper;
+using MapZilla;
 namespace Benchmark.Flattening;
 
 static class Config
@@ -338,7 +338,7 @@ public class ManualCtorMapper : IObjectToObjectMapper
 public class FlatteningMapper : IObjectToObjectMapper
 {
     private ModelObject _source;
-    public string Name => "AutoMapper";
+    public string Name => "MapZilla";
     public void Initialize()
     {
         _source = new ModelObject

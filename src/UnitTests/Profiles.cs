@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests
+using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace Profiles
     {
@@ -45,7 +47,7 @@ namespace AutoMapper.UnitTests
             }
         }
 
-        public class When_configuring_a_profile_through_a_profile_subclass : AutoMapperSpecBase
+        public class When_configuring_a_profile_through_a_profile_subclass : MapZillaSpecBase
         {
             private Dto _result;
             private static CustomProfile1 _customProfile;
@@ -110,7 +112,7 @@ namespace AutoMapper.UnitTests
         }
 
 
-        public class When_disabling_constructor_mapping_with_profiles : AutoMapperSpecBase
+        public class When_disabling_constructor_mapping_with_profiles : MapZillaSpecBase
         {
             private B _b;
 

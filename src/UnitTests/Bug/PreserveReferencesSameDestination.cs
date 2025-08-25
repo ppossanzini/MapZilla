@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class Self_referencing_existing_destination : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class Self_referencing_existing_destination : MapZillaSpecBase
 {
     public class BaseType
     {
@@ -31,7 +33,7 @@ public class Self_referencing_existing_destination : AutoMapperSpecBase
     }
 }
 
-public class PreserveReferencesSameDestination : AutoMapperSpecBase
+public class PreserveReferencesSameDestination : MapZillaSpecBase
 {
     public class DtoOne
     {

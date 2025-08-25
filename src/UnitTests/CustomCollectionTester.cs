@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests;
+using MapZilla;
+
+namespace MapZilla.UnitTests;
 public class CustomCollectionTester {
     [Fact]
     public void Should_be_able_to_handle_custom_dictionary_with_custom_methods() {

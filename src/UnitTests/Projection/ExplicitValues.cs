@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class ExplicitValues : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class ExplicitValues : MapZillaSpecBase
 {
     private List<Dest> _dests;
 

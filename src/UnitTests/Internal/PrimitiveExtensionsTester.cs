@@ -1,6 +1,6 @@
-using AutoMapper.Execution;
+using MapZilla.Execution;
 
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
 public class PrimitiveExtensionsTester
 {

@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests.Bug
+using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace RecognizeIxesBug
     {
-        public class IxesTest : AutoMapperSpecBase
+        public class IxesTest : MapZillaSpecBase
         {
             private Stuff _source;
             private StuffView _dest;

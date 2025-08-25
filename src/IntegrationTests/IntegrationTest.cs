@@ -1,6 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests;
+﻿namespace MapZilla.IntegrationTests;
 
-public abstract class IntegrationTest<TInitializer> : AutoMapperSpecBase, IAsyncLifetime where TInitializer : IInitializer, new()
+public abstract class IntegrationTest<TInitializer> : MapZillaSpecBase, IAsyncLifetime where TInitializer : IInitializer, new()
 {
     Task IAsyncLifetime.DisposeAsync() => Task.CompletedTask;
     Task IAsyncLifetime.InitializeAsync() => new TInitializer().Migrate();

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class OpenGenericsWithAs : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class OpenGenericsWithAs : MapZillaSpecBase
 {
     public class Source
     {
@@ -31,7 +33,7 @@ public class OpenGenericsWithAs : AutoMapperSpecBase
     }
 }
 
-public class OpenGenericsWithInclude : AutoMapperSpecBase
+public class OpenGenericsWithInclude : MapZillaSpecBase
 {
     public class Person
     {
@@ -96,7 +98,7 @@ public class OpenGenericsWithInclude : AutoMapperSpecBase
     }
 }
 
-public class OpenGenericsWithIncludeBase : AutoMapperSpecBase
+public class OpenGenericsWithIncludeBase : MapZillaSpecBase
 {
     public class Person
     {
@@ -162,7 +164,7 @@ public class OpenGenericsWithIncludeBase : AutoMapperSpecBase
     }
 }
 
-public class OpenGenericsAndNonGenericsWithIncludeBase : AutoMapperSpecBase
+public class OpenGenericsAndNonGenericsWithIncludeBase : MapZillaSpecBase
 {
     public abstract class Entity
     {
@@ -219,7 +221,7 @@ public class OpenGenericsAndNonGenericsWithIncludeBase : AutoMapperSpecBase
         model.SubMember.ShouldBe("bar");
     }
 }
-public class IncludeBaseOpenGenerics : AutoMapperSpecBase
+public class IncludeBaseOpenGenerics : MapZillaSpecBase
 {
     public abstract class OrderModel<T>
     {

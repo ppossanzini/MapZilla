@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.BidirectionalRelationships;
+using MapZilla;
 
-public class RecursiveMappingWithStruct : AutoMapperSpecBase
+namespace MapZilla.UnitTests.BidirectionalRelationships;
+
+public class RecursiveMappingWithStruct : MapZillaSpecBase
 {
     private ParentDto _dto;
 
@@ -70,7 +72,7 @@ public class RecursiveMappingWithStruct : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_many_child_relationship : AutoMapperSpecBase
+public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_many_child_relationship : MapZillaSpecBase
 {
     private ParentDto _dto;
 
@@ -135,7 +137,7 @@ public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_ma
     }
 }
 
-public class RecursiveDynamicMapping : AutoMapperSpecBase
+public class RecursiveDynamicMapping : MapZillaSpecBase
 {
     private ParentDto<int> _dto;
 
@@ -200,7 +202,7 @@ public class RecursiveDynamicMapping : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_many_child_relationship_using_CustomMapper_with_context : AutoMapperSpecBase
+public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_many_child_relationship_using_CustomMapper_with_context : MapZillaSpecBase
 {
     private ParentDto _dto;
     private static ParentModel _parent;
@@ -299,7 +301,7 @@ public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_ma
     }
 }
 
-public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_one_child_relationship : AutoMapperSpecBase
+public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_one_child_relationship : MapZillaSpecBase
 {
     private FooDto _dto;
 
@@ -351,7 +353,7 @@ public class When_mapping_to_a_destination_with_a_bidirectional_parent_one_to_on
     }
 }
 
-public class When_mapping_to_a_destination_containing_two_dtos_mapped_from_the_same_source : AutoMapperSpecBase
+public class When_mapping_to_a_destination_containing_two_dtos_mapped_from_the_same_source : MapZillaSpecBase
 {
     private FooContainerModel _dto;
 
@@ -403,7 +405,7 @@ public class When_mapping_to_a_destination_containing_two_dtos_mapped_from_the_s
     }
 }
 
-public class When_mapping_with_a_bidirectional_relationship_that_includes_arrays : AutoMapperSpecBase
+public class When_mapping_with_a_bidirectional_relationship_that_includes_arrays : MapZillaSpecBase
 
 {
     private ParentDto _dtoParent;

@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 public class PropertyNamedType
 {
@@ -15,7 +17,7 @@ public class PropertyNamedType
     public void Should_detect_unmapped_destination_property_named_type()
     {
         var config = new MapperConfiguration(c=>c.CreateMap<Source, Destination>());
-        new Action(config.AssertConfigurationIsValid).ShouldThrowException<AutoMapperConfigurationException>(
+        new Action(config.AssertConfigurationIsValid).ShouldThrowException<MapZillaConfigurationException>(
             ex=>ex.Errors[0].UnmappedPropertyNames[0].ShouldBe("Type"));
     }
 }

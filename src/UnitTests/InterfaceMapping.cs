@@ -1,5 +1,7 @@
-namespace AutoMapper.UnitTests.InterfaceMapping;
-public class InterfaceWithObjectProperty : AutoMapperSpecBase
+using MapZilla;
+
+namespace MapZilla.UnitTests.InterfaceMapping;
+public class InterfaceWithObjectProperty : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg => cfg.CreateMap<ISourceModel, IDestModel>());
     public interface ISourceModel
@@ -21,7 +23,7 @@ public class InterfaceWithObjectProperty : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Mapper.Map(new SourceModel { Id = 42 }, new DestModel()).Id.ShouldBe(42);
 }
-public class InterfaceInheritance : AutoMapperSpecBase
+public class InterfaceInheritance : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {
@@ -75,10 +77,10 @@ public class MapToInterface : NonValidatingSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(c=>c.CreateMap<object, IEnumerable<object>>());
     [Fact]
-    public void Should_throw() => new Action(()=>Mapper.Map<IEnumerable<object>>(new object())).ShouldThrow<AutoMapperMappingException>().Message.ShouldStartWith(
+    public void Should_throw() => new Action(()=>Mapper.Map<IEnumerable<object>>(new object())).ShouldThrow<MapZillaMappingException>().Message.ShouldStartWith(
         "Cannot create interface System.Collections.Generic.IEnumerable`1[System.Object]");
 }
-public class GenericsAndInterfaces : AutoMapperSpecBase
+public class GenericsAndInterfaces : MapZillaSpecBase
 {
     MyClass<ContainerClass> source = new MyClass<ContainerClass> { Container = new ContainerClass { MyProperty = 3 } };
 
@@ -124,7 +126,7 @@ public class GenericsAndInterfaces : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_generic_interface : AutoMapperSpecBase
+public class When_mapping_generic_interface : MapZillaSpecBase
 {
     public class Source<T> : List<T>
     {
@@ -187,7 +189,7 @@ public class When_mapping_generic_interface : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_an_interface_with_getter_only_member : AutoMapperSpecBase
+public class When_mapping_an_interface_with_getter_only_member : MapZillaSpecBase
 {
     interface ISource
     {
@@ -238,7 +240,7 @@ public class When_mapping_base_interface_members
     }
 }
 
-public class When_mapping_to_existing_object_through_interfaces : AutoMapperSpecBase
+public class When_mapping_to_existing_object_through_interfaces : MapZillaSpecBase
 {
     private class2DTO _result;
 
@@ -301,7 +303,7 @@ public class When_mapping_to_existing_object_through_interfaces : AutoMapperSpec
     }
 }
 
-public class When_mapping_an_interface_to_an_abstract_type : AutoMapperSpecBase
+public class When_mapping_an_interface_to_an_abstract_type : MapZillaSpecBase
 {
     private DtoObject _result;
 
@@ -367,7 +369,7 @@ public class When_mapping_an_interface_to_an_abstract_type : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_a_concrete_type_to_an_interface_type : AutoMapperSpecBase
+public class When_mapping_a_concrete_type_to_an_interface_type : MapZillaSpecBase
 {
     private IDestination _result;
 
@@ -417,7 +419,7 @@ public class When_mapping_a_concrete_type_to_an_interface_type : AutoMapperSpecB
     }
 }
 
-public class When_mapping_an_interface_type_to_a_concrete_type_and_reverse : AutoMapperSpecBase
+public class When_mapping_an_interface_type_to_a_concrete_type_and_reverse : MapZillaSpecBase
 {
     public interface ISource
     {
@@ -435,12 +437,12 @@ public class When_mapping_an_interface_type_to_a_concrete_type_and_reverse : Aut
     [Fact]
     public void Should_not_convert_to_interface()
     {
-        Should.Throw<AutoMapperMappingException>(() => Mapper.Map<Destination, ISource>(new Destination {Value = 5}))
+        Should.Throw<MapZillaMappingException>(() => Mapper.Map<Destination, ISource>(new Destination {Value = 5}))
             .Message.ShouldStartWith("Cannot create interface " + typeof(ISource).FullName);
     }
 }
 
-public class When_mapping_an_interface_type_to_an_interface_type_and_reverse : AutoMapperSpecBase
+public class When_mapping_an_interface_type_to_an_interface_type_and_reverse : MapZillaSpecBase
 {
     public interface ISource
     {
@@ -478,7 +480,7 @@ public class When_mapping_an_interface_type_to_an_interface_type_and_reverse : A
     }
 }
 
-public class When_mapping_a_concrete_type_to_an_interface_type_and_reverse : AutoMapperSpecBase
+public class When_mapping_a_concrete_type_to_an_interface_type_and_reverse : MapZillaSpecBase
 {
     public class Source
     {
@@ -510,7 +512,7 @@ public class When_mapping_a_concrete_type_to_an_interface_type_and_reverse : Aut
     }
 }
 
-public class When_mapping_a_concrete_type_to_an_interface_type_that_derives_from_INotifyPropertyChanged : AutoMapperSpecBase
+public class When_mapping_a_concrete_type_to_an_interface_type_that_derives_from_INotifyPropertyChanged : MapZillaSpecBase
 {
     private IDestination _result;
 
@@ -582,7 +584,7 @@ public class When_mapping_a_concrete_type_to_an_interface_type_that_derives_from
     }
 }
 
-public class When_mapping_a_derived_interface_to_an_derived_concrete_type : AutoMapperSpecBase
+public class When_mapping_a_derived_interface_to_an_derived_concrete_type : MapZillaSpecBase
 {
     private Destination _result = null;
 
@@ -635,7 +637,7 @@ public class When_mapping_a_derived_interface_to_an_derived_concrete_type : Auto
     }
 }
 
-public class When_mapping_a_derived_interface_to_an_derived_concrete_type_with_readonly_interface_members : AutoMapperSpecBase
+public class When_mapping_a_derived_interface_to_an_derived_concrete_type_with_readonly_interface_members : MapZillaSpecBase
 {
     private Destination _result = null;
 
@@ -698,7 +700,7 @@ public class When_mapping_a_derived_interface_to_an_derived_concrete_type_with_r
     }
 }
 
-public class When_mapping_to_a_type_with_explicitly_implemented_interface_members : AutoMapperSpecBase
+public class When_mapping_to_a_type_with_explicitly_implemented_interface_members : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -735,7 +737,7 @@ public class When_mapping_to_a_type_with_explicitly_implemented_interface_member
     }
 }
 
-public class MappingToInterfacesWithPolymorphism : AutoMapperSpecBase
+public class MappingToInterfacesWithPolymorphism : MapZillaSpecBase
 {
     private BaseDto[] _baseDtos;
 

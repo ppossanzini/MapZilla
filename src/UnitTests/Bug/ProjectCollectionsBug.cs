@@ -1,4 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Bug
+﻿using MapZilla;
+using MapZilla.QueryableExtensions;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace ProjectCollectionsBug
     {

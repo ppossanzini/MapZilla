@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests
+using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace NonGenericReverseMapping
     {
-        public class When_reverse_mapping_classes_with_simple_properties : AutoMapperSpecBase
+        public class When_reverse_mapping_classes_with_simple_properties : MapZillaSpecBase
         {
             private Source _source;
 
@@ -36,7 +38,7 @@ namespace AutoMapper.UnitTests
             }
         }
 
-        public class When_reverse_mapping_and_ignoring_via_method : AutoMapperSpecBase
+        public class When_reverse_mapping_and_ignoring_via_method : MapZillaSpecBase
         {
             public class Source
             {

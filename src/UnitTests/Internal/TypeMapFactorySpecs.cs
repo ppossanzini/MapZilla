@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
+using MapZilla;
 
-namespace AutoMapper.UnitTests.Tests;
+namespace MapZilla.UnitTests.Tests;
 public class StubNamingConvention : INamingConvention
 {
     public Regex SplittingExpression { get; set; }
@@ -42,7 +43,7 @@ public class When_constructing_type_maps_with_matching_property_names : NonValid
         propertyMaps.Count().ShouldBe(2);
     }
 }
-public class When_using_a_custom_source_naming_convention : AutoMapperSpecBase
+public class When_using_a_custom_source_naming_convention : MapZillaSpecBase
 {
     private class Source
     {
@@ -64,7 +65,7 @@ public class When_using_a_custom_source_naming_convention : AutoMapperSpecBase
     [Fact]
     public void Should_split_using_naming_convention_rules() => AssertConfigurationIsValid();
 }
-public class When_using_a_custom_destination_naming_convention : AutoMapperSpecBase
+public class When_using_a_custom_destination_naming_convention : MapZillaSpecBase
 {
     private class Source
     {

@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class MappingToAReadOnlyCollection : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class MappingToAReadOnlyCollection : MapZillaSpecBase
 {
     private Destination _destination;
 

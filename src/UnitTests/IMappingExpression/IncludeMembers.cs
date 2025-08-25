@@ -1,8 +1,9 @@
-﻿using AutoMapper.Execution;
+﻿using MapZilla;
+using MapZilla.Execution;
 
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
-public class IncludeMembers : AutoMapperSpecBase
+public class IncludeMembers : MapZillaSpecBase
 {
     class Source
     {
@@ -43,7 +44,7 @@ public class IncludeMembers : AutoMapperSpecBase
         destination.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersWrapperFirstOrDefault : AutoMapperSpecBase
+public class IncludeMembersWrapperFirstOrDefault : MapZillaSpecBase
 {
     class Source
     {
@@ -111,7 +112,7 @@ public class IncludeMembersWrapperFirstOrDefault : AutoMapperSpecBase
         destination.Publisher.ShouldBe("publisher");
     }
 }
-public class IncludeMembersFirstOrDefault : AutoMapperSpecBase
+public class IncludeMembersFirstOrDefault : MapZillaSpecBase
 {
     class Source
     {
@@ -169,7 +170,7 @@ public class IncludeMembersFirstOrDefault : AutoMapperSpecBase
         destination.Publisher.ShouldBe("publisher");
     }
 }
-public class IncludeMembersFirstOrDefaultReverseMap : AutoMapperSpecBase
+public class IncludeMembersFirstOrDefaultReverseMap : MapZillaSpecBase
 {
     class Source
     {
@@ -215,7 +216,7 @@ public class IncludeMembersFirstOrDefaultReverseMap : AutoMapperSpecBase
         source.Name.ShouldBe("name");
     }
 }
-public class IncludeMembersNested : AutoMapperSpecBase
+public class IncludeMembersNested : MapZillaSpecBase
 {
     class Source
     {
@@ -270,7 +271,7 @@ public class IncludeMembersNested : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithMapFromExpression : AutoMapperSpecBase
+public class IncludeMembersWithMapFromExpression : MapZillaSpecBase
 {
     class Source
     {
@@ -312,7 +313,7 @@ public class IncludeMembersWithMapFromExpression : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithNullSubstitute : AutoMapperSpecBase
+public class IncludeMembersWithNullSubstitute : MapZillaSpecBase
 {
     class Source
     {
@@ -354,7 +355,7 @@ public class IncludeMembersWithNullSubstitute : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithMapFromFunc : AutoMapperSpecBase
+public class IncludeMembersWithMapFromFunc : MapZillaSpecBase
 {
     class Source
     {
@@ -396,7 +397,7 @@ public class IncludeMembersWithMapFromFunc : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithResolver : AutoMapperSpecBase
+public class IncludeMembersWithResolver : MapZillaSpecBase
 {
     class Source
     {
@@ -448,7 +449,7 @@ public class IncludeMembersWithResolver : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithMemberResolver : AutoMapperSpecBase
+public class IncludeMembersWithMemberResolver : MapZillaSpecBase
 {
     class Source
     {
@@ -499,7 +500,7 @@ public class IncludeMembersWithMemberResolver : AutoMapperSpecBase
         public string Resolve(OtherInnerSource source, Destination destination, string sourceMember, string destMember, ResolutionContext context) => sourceMember;
     }
 }
-public class IncludeMembersWithValueConverter : AutoMapperSpecBase
+public class IncludeMembersWithValueConverter : MapZillaSpecBase
 {
     class Source
     {
@@ -546,7 +547,7 @@ public class IncludeMembersWithValueConverter : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithConditions : AutoMapperSpecBase
+public class IncludeMembersWithConditions : MapZillaSpecBase
 {
     class Source
     {
@@ -587,7 +588,7 @@ public class IncludeMembersWithConditions : AutoMapperSpecBase
         destination.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersWithPreConditions : AutoMapperSpecBase
+public class IncludeMembersWithPreConditions : MapZillaSpecBase
 {
     class Source
     {
@@ -628,7 +629,7 @@ public class IncludeMembersWithPreConditions : AutoMapperSpecBase
         destination.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersCycle : AutoMapperSpecBase
+public class IncludeMembersCycle : MapZillaSpecBase
 {
     class Source
     {
@@ -675,7 +676,7 @@ public class IncludeMembersCycle : AutoMapperSpecBase
         destination.Parent.ShouldBe(destination);
     }
 }
-public class IncludeMembersReverseMap : AutoMapperSpecBase
+public class IncludeMembersReverseMap : MapZillaSpecBase
 {
     class Source
     {
@@ -718,7 +719,7 @@ public class IncludeMembersReverseMap : AutoMapperSpecBase
         source.OtherInnerSource.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersReverseMapOverride : AutoMapperSpecBase
+public class IncludeMembersReverseMapOverride : MapZillaSpecBase
 {
     class Source
     {
@@ -761,7 +762,7 @@ public class IncludeMembersReverseMapOverride : AutoMapperSpecBase
     }
 }
 
-public class ReverseMapToIncludeMembers : AutoMapperSpecBase
+public class ReverseMapToIncludeMembers : MapZillaSpecBase
 {
     class Source
     {
@@ -805,7 +806,7 @@ public class ReverseMapToIncludeMembers : AutoMapperSpecBase
         destination.Title.ShouldBe("title");
     }
 }
-public class ReverseMapToIncludeMembersOverride : AutoMapperSpecBase
+public class ReverseMapToIncludeMembersOverride : MapZillaSpecBase
 {
     class Source
     {
@@ -850,7 +851,7 @@ public class ReverseMapToIncludeMembersOverride : AutoMapperSpecBase
         destination.Title.ShouldBeNull();
     }
 }
-public class IncludeMembersWithAfterMap : AutoMapperSpecBase
+public class IncludeMembersWithAfterMap : MapZillaSpecBase
 {
     class Source
     {
@@ -895,7 +896,7 @@ public class IncludeMembersWithAfterMap : AutoMapperSpecBase
     }
 }
 
-public class IncludeMembersWithForPath : AutoMapperSpecBase
+public class IncludeMembersWithForPath : MapZillaSpecBase
 {
     class Source
     {
@@ -948,7 +949,7 @@ public class IncludeMembersWithForPath : AutoMapperSpecBase
         destination.InnerDestination.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersTransformers : AutoMapperSpecBase
+public class IncludeMembersTransformers : MapZillaSpecBase
 {
     class Source
     {
@@ -989,7 +990,7 @@ public class IncludeMembersTransformers : AutoMapperSpecBase
         destination.Title.ShouldBe("titleExtraExMain");
     }
 }
-public class IncludeMembersTransformersPerMember : AutoMapperSpecBase
+public class IncludeMembersTransformersPerMember : MapZillaSpecBase
 {
     class Source
     {
@@ -1030,7 +1031,7 @@ public class IncludeMembersTransformersPerMember : AutoMapperSpecBase
         destination.Title.ShouldBe("titleEx");
     }
 }
-public class IncludeMembersWithGenerics : AutoMapperSpecBase
+public class IncludeMembersWithGenerics : MapZillaSpecBase
 {
     class Source<TInnerSource, TOtherInnerSource>
     {
@@ -1096,7 +1097,7 @@ public class IncludeMembersWithGenericsInvalidStrings
     }
 }
 
-public class IncludeMembersReverseMapGenerics : AutoMapperSpecBase
+public class IncludeMembersReverseMapGenerics : MapZillaSpecBase
 {
     class Source<TInnerSource, TOtherInnerSource>
     {
@@ -1139,7 +1140,7 @@ public class IncludeMembersReverseMapGenerics : AutoMapperSpecBase
         source.OtherInnerSource.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersReverseMapGenericsOverride : AutoMapperSpecBase
+public class IncludeMembersReverseMapGenericsOverride : MapZillaSpecBase
 {
     class Source<TInnerSource, TOtherInnerSource>
     {
@@ -1181,7 +1182,7 @@ public class IncludeMembersReverseMapGenericsOverride : AutoMapperSpecBase
         source.OtherInnerSource.ShouldBeNull();
     }
 }
-public class ReverseMapToIncludeMembersGenerics : AutoMapperSpecBase
+public class ReverseMapToIncludeMembersGenerics : MapZillaSpecBase
 {
     class Source<TInnerSource, TOtherInnerSource>
     {
@@ -1225,7 +1226,7 @@ public class ReverseMapToIncludeMembersGenerics : AutoMapperSpecBase
         destination.Title.ShouldBe("title");
     }
 }
-public class ReverseMapToIncludeMembersGenericsOverride : AutoMapperSpecBase
+public class ReverseMapToIncludeMembersGenericsOverride : MapZillaSpecBase
 {
     class Source<TInnerSource, TOtherInnerSource>
     {
@@ -1270,7 +1271,7 @@ public class ReverseMapToIncludeMembersGenericsOverride : AutoMapperSpecBase
         destination.Title.ShouldBeNull();
     }
 }
-public class IncludeMembersSourceValidation : AutoMapperSpecBase
+public class IncludeMembersSourceValidation : MapZillaSpecBase
 {
     class Source
     {
@@ -1312,7 +1313,7 @@ public class IncludeMembersSourceValidation : AutoMapperSpecBase
     }
 
 }
-public class IncludeMembersWithGenericsSourceValidation : AutoMapperSpecBase
+public class IncludeMembersWithGenericsSourceValidation : MapZillaSpecBase
 {
     class Source<TInnerSource, TOtherInnerSource>
     {
@@ -1353,7 +1354,7 @@ public class IncludeMembersWithGenericsSourceValidation : AutoMapperSpecBase
         destination.Title.ShouldBe("title");
     }
 }
-public class IncludeMembersWithInclude : AutoMapperSpecBase
+public class IncludeMembersWithInclude : MapZillaSpecBase
 {
     public class ParentOfSource
     {
@@ -1380,7 +1381,7 @@ public class IncludeMembersWithInclude : AutoMapperSpecBase
     [Fact]
     public void Should_inherit_configuration() => Mapper.Map<Destination>(new ParentOfSource { InnerSource = new Source { FirstName = "first", LastName = "last" } }).FullName.ShouldBe("first last");
 }
-public class IncludeMembersWithIncludeDifferentOrder : AutoMapperSpecBase
+public class IncludeMembersWithIncludeDifferentOrder : MapZillaSpecBase
 {
     public class ParentOfSource
     {
@@ -1407,7 +1408,7 @@ public class IncludeMembersWithIncludeDifferentOrder : AutoMapperSpecBase
     [Fact]
     public void Should_inherit_configuration() => Mapper.Map<Destination>(new ParentOfSource { InnerSource = new Source { FirstName = "first", LastName = "last" } }).FullName.ShouldBe("first last");
 }
-public class IncludeMembersWithIncludeBase : AutoMapperSpecBase
+public class IncludeMembersWithIncludeBase : MapZillaSpecBase
 {
     public class Customer
     {
@@ -1440,7 +1441,7 @@ public class IncludeMembersWithIncludeBase : AutoMapperSpecBase
     [Fact]
     public void Should_inherit_IncludeMembers() => Mapper.Map<CreateCustomerDto>(new Customer { Address = new Address { Postcode = "Postcode" } }).Postcode.ShouldBe("Postcode");
 }
-public class IncludeMembersWithIncludeBaseOverride : AutoMapperSpecBase
+public class IncludeMembersWithIncludeBaseOverride : MapZillaSpecBase
 {
     public class Customer
     {
@@ -1475,7 +1476,7 @@ public class IncludeMembersWithIncludeBaseOverride : AutoMapperSpecBase
     [Fact]
     public void Should_override_IncludeMembers() => Mapper.Map<CreateCustomerDto>(new Customer { NewAddress = new Address { Postcode = "Postcode" } }).Postcode.ShouldBe("Postcode");
 }
-public class IncludeMembersWithIncludeBaseOverrideMapFrom : AutoMapperSpecBase
+public class IncludeMembersWithIncludeBaseOverrideMapFrom : MapZillaSpecBase
 {
     public class Customer
     {
@@ -1511,7 +1512,7 @@ public class IncludeMembersWithIncludeBaseOverrideMapFrom : AutoMapperSpecBase
     [Fact]
     public void Should_override_IncludeMembers() => Mapper.Map<CreateCustomerDto>(new Customer { Name = "Postcode", Address = new Address() }).Postcode.ShouldBe("Postcode");
 }
-public class IncludeMembersWithIncludeBaseOverrideConvention : AutoMapperSpecBase
+public class IncludeMembersWithIncludeBaseOverrideConvention : MapZillaSpecBase
 {
     public class Customer
     {
@@ -1548,7 +1549,7 @@ public class IncludeMembersWithIncludeBaseOverrideConvention : AutoMapperSpecBas
     [Fact]
     public void Should_override_IncludeMembers() => Mapper.Map<CreateCustomerDto>(new NewCustomer { Postcode = "Postcode", Address = new Address() }).Postcode.ShouldBe("Postcode");
 }
-public class IncludeMembersWithValueTypeValidation : AutoMapperSpecBase
+public class IncludeMembersWithValueTypeValidation : MapZillaSpecBase
 {
     class Source
     {
@@ -1570,7 +1571,7 @@ public class IncludeMembersWithValueTypeValidation : AutoMapperSpecBase
     [Fact]
     public void Validate() => AssertConfigurationIsValid();
 }
-public class CascadedIncludeMembers : AutoMapperSpecBase
+public class CascadedIncludeMembers : MapZillaSpecBase
 {
     public class Source
     {
@@ -1607,7 +1608,7 @@ public class CascadedIncludeMembers : AutoMapperSpecBase
         dest.Level1Field.ShouldBe(3);
     }
 }
-public class CascadedIncludeMembersForPath : AutoMapperSpecBase
+public class CascadedIncludeMembersForPath : MapZillaSpecBase
 {
     public class Source
     {
@@ -1644,7 +1645,7 @@ public class CascadedIncludeMembersForPath : AutoMapperSpecBase
         dest.Level1Field.ShouldBe(3);
     }
 }
-public class IncludeMembersWithCascadedIncludeBase : AutoMapperSpecBase
+public class IncludeMembersWithCascadedIncludeBase : MapZillaSpecBase
 {
     class Item
     {
@@ -1680,7 +1681,7 @@ public class IncludeMembersWithCascadedIncludeBase : AutoMapperSpecBase
     [Fact]
     public void Should_inherit_IncludeMembers() => Mapper.Map<SignedResponse>(new ExpiredItem { MetaData = new MetaData { Hash = "hash" } }).Hash.ShouldBe("hash");
 }
-public class IncludeMembersConstructorMapping : AutoMapperSpecBase
+public class IncludeMembersConstructorMapping : MapZillaSpecBase
 {
     public class Source
     {
@@ -1715,7 +1716,7 @@ public class IncludeMembersConstructorMapping : AutoMapperSpecBase
         dest.Level1Field.ShouldBe(3);
     }
 }
-public class IncludeMembersMultipleConstructorMapping : AutoMapperSpecBase
+public class IncludeMembersMultipleConstructorMapping : MapZillaSpecBase
 {
     public class Source
     {
@@ -1752,7 +1753,7 @@ public class IncludeMembersMultipleConstructorMapping : AutoMapperSpecBase
         dest.Level1Field.ShouldBe(3);
     }
 }
-public class IncludeMembersNullCheck : AutoMapperSpecBase
+public class IncludeMembersNullCheck : MapZillaSpecBase
 {
     class Source
     {
@@ -1777,7 +1778,7 @@ public class IncludeMembersNullCheck : AutoMapperSpecBase
     [Fact]
     public void Should_flatten() => Mapper.Map<Destination[]>(new[] { default(Source) })[0].ShouldBeNull();
 }
-public class IncludeMembersCascadedNullCheck : AutoMapperSpecBase
+public class IncludeMembersCascadedNullCheck : MapZillaSpecBase
 {
     public class Grandchild
     {

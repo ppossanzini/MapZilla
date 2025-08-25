@@ -1,8 +1,9 @@
 using System.Dynamic;
-using AutoMapper.Internal.Mappers;
-namespace AutoMapper.UnitTests.ArraysAndLists;
+using MapZilla;
+using MapZilla.Internal.Mappers;
+namespace MapZilla.UnitTests.ArraysAndLists;
 
-public class When_mapping_to_Existing_IEnumerable : AutoMapperSpecBase
+public class When_mapping_to_Existing_IEnumerable : MapZillaSpecBase
 {
     public class Source
     {
@@ -35,7 +36,7 @@ public class When_mapping_to_Existing_IEnumerable : AutoMapperSpecBase
         destination.Items.ShouldBeEmpty();
     }
 }
-public class When_mapping_to_an_array_as_ICollection_with_MapAtRuntime : AutoMapperSpecBase
+public class When_mapping_to_an_array_as_ICollection_with_MapAtRuntime : MapZillaSpecBase
 {
     Destination _destination;
     SourceItem[] _sourceItems = new [] { new SourceItem { Value = "1" }, new SourceItem { Value = "2" }, new SourceItem { Value = "3" } };
@@ -79,7 +80,7 @@ public class When_mapping_to_an_array_as_ICollection_with_MapAtRuntime : AutoMap
     }
 }
 
-public class When_mapping_an_array : AutoMapperSpecBase
+public class When_mapping_an_array : MapZillaSpecBase
 {
     decimal[] _source = Enumerable.Range(1, 10).Select(i=>(decimal)i).ToArray();
     decimal[] _destination;
@@ -98,7 +99,7 @@ public class When_mapping_an_array : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_a_primitive_array : AutoMapperSpecBase
+public class When_mapping_a_primitive_array : MapZillaSpecBase
 {
     int[] _source = Enumerable.Range(1, 10).ToArray();
     long[] _destination;
@@ -123,7 +124,7 @@ public class When_mapping_a_primitive_array : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_a_primitive_array_with_custom_mapping_function : AutoMapperSpecBase
+public class When_mapping_a_primitive_array_with_custom_mapping_function : MapZillaSpecBase
 {
     int[] _source = Enumerable.Range(1, 10).ToArray();
     int[] _destination;
@@ -145,7 +146,7 @@ public class When_mapping_a_primitive_array_with_custom_mapping_function : AutoM
     }
 }
 
-public class When_mapping_a_primitive_array_with_custom_object_mapper : AutoMapperSpecBase
+public class When_mapping_a_primitive_array_with_custom_object_mapper : MapZillaSpecBase
 {
     int[] _source = Enumerable.Range(1, 10).ToArray();
     int[] _destination;
@@ -178,7 +179,7 @@ public class When_mapping_a_primitive_array_with_custom_object_mapper : AutoMapp
     }
 }
 
-public class When_mapping_null_list_to_array: AutoMapperSpecBase
+public class When_mapping_null_list_to_array: MapZillaSpecBase
 {
     Destination _destination;
 
@@ -220,7 +221,7 @@ public class When_mapping_null_list_to_array: AutoMapperSpecBase
     }
 }
 
-public class When_mapping_null_array_to_list : AutoMapperSpecBase
+public class When_mapping_null_array_to_list : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -262,7 +263,7 @@ public class When_mapping_null_array_to_list : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_collections : AutoMapperSpecBase
+public class When_mapping_collections : MapZillaSpecBase
 {
     Author mappedAuthor;
 
@@ -300,7 +301,7 @@ public class When_mapping_collections : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_an_existing_HashSet_typed_as_IEnumerable : AutoMapperSpecBase
+public class When_mapping_to_an_existing_HashSet_typed_as_IEnumerable : MapZillaSpecBase
 {
     private Destination _destination = new Destination();
 
@@ -332,7 +333,7 @@ public class When_mapping_to_an_existing_HashSet_typed_as_IEnumerable : AutoMapp
     }
 }
 
-public class When_mapping_to_an_existing_array_typed_as_IEnumerable : AutoMapperSpecBase
+public class When_mapping_to_an_existing_array_typed_as_IEnumerable : MapZillaSpecBase
 {
     private Destination _destination = new Destination();
 
@@ -363,7 +364,7 @@ public class When_mapping_to_an_existing_array_typed_as_IEnumerable : AutoMapper
     }
 }
 
-public class When_mapping_to_a_concrete_non_generic_ienumerable : AutoMapperSpecBase
+public class When_mapping_to_a_concrete_non_generic_ienumerable : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -410,7 +411,7 @@ public class When_mapping_to_a_concrete_non_generic_ienumerable : AutoMapperSpec
     }
 }
 
-public class When_mapping_to_a_concrete_generic_ienumerable : AutoMapperSpecBase
+public class When_mapping_to_a_concrete_generic_ienumerable : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -457,7 +458,7 @@ public class When_mapping_to_a_concrete_generic_ienumerable : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_getter_only_ienumerable : AutoMapperSpecBase
+public class When_mapping_to_a_getter_only_ienumerable : MapZillaSpecBase
 {
     private Destination _destination = new Destination();
     public class Source
@@ -483,7 +484,7 @@ public class When_mapping_to_a_getter_only_ienumerable : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_getter_only_existing_ienumerable : AutoMapperSpecBase
+public class When_mapping_to_a_getter_only_existing_ienumerable : MapZillaSpecBase
 {
     private Destination _destination = new Destination();
     public class Source
@@ -509,7 +510,7 @@ public class When_mapping_to_a_getter_only_existing_ienumerable : AutoMapperSpec
     }
 }
 
-public class When_mapping_to_a_concrete_non_generic_icollection : AutoMapperSpecBase
+public class When_mapping_to_a_concrete_non_generic_icollection : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -556,7 +557,7 @@ public class When_mapping_to_a_concrete_non_generic_icollection : AutoMapperSpec
     }
 }
 
-public class When_mapping_to_a_concrete_generic_icollection : AutoMapperSpecBase
+public class When_mapping_to_a_concrete_generic_icollection : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -591,7 +592,7 @@ public class When_mapping_to_a_concrete_generic_icollection : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_concrete_ilist : AutoMapperSpecBase
+public class When_mapping_to_a_concrete_ilist : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -626,7 +627,7 @@ public class When_mapping_to_a_concrete_ilist : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_concrete_generic_ilist : AutoMapperSpecBase
+public class When_mapping_to_a_concrete_generic_ilist : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -661,7 +662,7 @@ public class When_mapping_to_a_concrete_generic_ilist : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_custom_list_with_the_same_type : AutoMapperSpecBase
+public class When_mapping_to_a_custom_list_with_the_same_type : MapZillaSpecBase
 {
     private Destination _destination;
     private Source _source;
@@ -697,7 +698,7 @@ public class When_mapping_to_a_custom_list_with_the_same_type : AutoMapperSpecBa
         _source.Values.ShouldBe(_destination.Values);
     }
 }
-public class When_mapping_to_a_collection_with_instantiation_managed_by_the_destination : AutoMapperSpecBase
+public class When_mapping_to_a_collection_with_instantiation_managed_by_the_destination : MapZillaSpecBase
 {
     private Destination _destination;
     private Source _source;
@@ -749,7 +750,7 @@ public class When_mapping_to_a_collection_with_instantiation_managed_by_the_dest
     }
 }
 
-public class When_mapping_to_an_existing_list_with_existing_items : AutoMapperSpecBase
+public class When_mapping_to_an_existing_list_with_existing_items : MapZillaSpecBase
 {
     private Destination _destination;
     private Source _source;
@@ -801,7 +802,7 @@ public class When_mapping_to_an_existing_list_with_existing_items : AutoMapperSp
     }
 }
 
-public class When_mapping_to_getter_only_list_with_existing_items : AutoMapperSpecBase
+public class When_mapping_to_getter_only_list_with_existing_items : MapZillaSpecBase
 {
     public class SourceItem
     {
@@ -836,7 +837,7 @@ public class When_mapping_to_getter_only_list_with_existing_items : AutoMapperSp
         destination.IValues.ShouldBeEmpty();
     }
 }
-public class When_mapping_to_list_with_existing_items : AutoMapperSpecBase
+public class When_mapping_to_list_with_existing_items : MapZillaSpecBase
 {
     public class SourceItem
     {
@@ -875,7 +876,7 @@ public class When_mapping_to_list_with_existing_items : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_a_collection_with_null_members : AutoMapperSpecBase
+public class When_mapping_a_collection_with_null_members : MapZillaSpecBase
 {
     const string FirstString = null;
 

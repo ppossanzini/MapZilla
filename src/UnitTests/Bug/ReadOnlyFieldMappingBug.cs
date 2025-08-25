@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class ReadOnlyFieldMappingBug : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ReadOnlyFieldMappingBug : MapZillaSpecBase
 {
     public class Source
     {

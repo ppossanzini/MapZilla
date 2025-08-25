@@ -1,8 +1,9 @@
-﻿using AutoMapper.Internal.Mappers;
+﻿using MapZilla;
+using MapZilla.Internal.Mappers;
 
-namespace AutoMapper.UnitTests.Mappers;
+namespace MapZilla.UnitTests.Mappers;
 
-public class ConvertMapperTests : AutoMapperSpecBase
+public class ConvertMapperTests : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(c => { });
 

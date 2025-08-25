@@ -1,8 +1,10 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 public class NullableEnumToNullableValueType
 {
-    public class CannotConvertEnumToNullableWhenPassedNull : AutoMapperSpecBase
+    public class CannotConvertEnumToNullableWhenPassedNull : MapZillaSpecBase
     {
         public enum DummyTypes : int
         {

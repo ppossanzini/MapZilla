@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using MapZilla;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AutoMapper.IntegrationTests.ExplicitExpansion;
+namespace MapZilla.IntegrationTests.ExplicitExpansion;
 
 public class ProjectAndAllowNullCollections : IntegrationTest<ProjectAndAllowNullCollections.DatabaseInitializer>
 {

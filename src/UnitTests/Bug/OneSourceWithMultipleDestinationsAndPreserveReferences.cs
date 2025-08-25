@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class OneSourceWithMultipleDestinationsAndPreserveReferences : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class OneSourceWithMultipleDestinationsAndPreserveReferences : MapZillaSpecBase
 {
     ClientModel _destination;
 

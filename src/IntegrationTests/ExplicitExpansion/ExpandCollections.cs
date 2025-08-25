@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.ExplicitExpansion;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.ExplicitExpansion;
 
 public class ExpandCollections : IntegrationTest<ExpandCollections.DatabaseInitializer>
 {

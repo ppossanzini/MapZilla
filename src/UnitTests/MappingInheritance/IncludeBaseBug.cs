@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.MappingInheritance;
-public class Include : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.MappingInheritance;
+public class Include : MapZillaSpecBase
 {
     public class From
     {
@@ -44,7 +46,7 @@ public class Include : AutoMapperSpecBase
         ReferenceEquals(dest.GetType(), typeof(Concrete)).ShouldBeTrue();
     }
 }
-public class BaseNotMatching : AutoMapperSpecBase
+public class BaseNotMatching : MapZillaSpecBase
 {
     public class From
     {
@@ -84,7 +86,7 @@ public class BaseNotMatching : AutoMapperSpecBase
         dest.AbstractValue.ShouldBe(42);
     }
 }
-public class BaseMatchingDifferentType : AutoMapperSpecBase
+public class BaseMatchingDifferentType : MapZillaSpecBase
 {
     public class From
     {
@@ -125,7 +127,7 @@ public class BaseMatchingDifferentType : AutoMapperSpecBase
         dest.AbstractValue.ShouldBe(42);
     }
 }
-public class IgnoreBaseMatching : AutoMapperSpecBase
+public class IgnoreBaseMatching : MapZillaSpecBase
 {
     public class From
     {

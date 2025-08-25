@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 public class MapFromClosureBug : NonValidatingSpecBase
 {
     private static readonly IDateProvider _dateProvider = new DateProvider();

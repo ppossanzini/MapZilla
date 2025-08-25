@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullableTypeConverter : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullableTypeConverter : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -44,7 +46,7 @@ public class NullableTypeConverter : AutoMapperSpecBase
     }
 }
 
-public class CustomConverters : AutoMapperSpecBase
+public class CustomConverters : MapZillaSpecBase
 {
     public class NullableIntToBoolConverter : ITypeConverter<int?, bool>
     {

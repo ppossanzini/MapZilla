@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests;
 
 public class ProjectionOrderTest : IntegrationTest<ProjectionOrderTest.DatabaseInitializer>
 {

@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace ParentChildResolversBug
     {
@@ -72,7 +74,7 @@
             }
         }
 
-        public class ParentChildResolverTests : AutoMapperSpecBase
+        public class ParentChildResolverTests : MapZillaSpecBase
         {
             private Dest _dest;
 

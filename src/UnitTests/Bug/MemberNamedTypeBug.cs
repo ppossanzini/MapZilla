@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 public class CorrectCtorIsPickedOnDestinationType : NonValidatingSpecBase
 {
     public class SourceClass { }
@@ -7,7 +9,7 @@ public class CorrectCtorIsPickedOnDestinationType : NonValidatingSpecBase
     {
         public DestinationClass() { }
 
-        // Since the name of the parameter is 'type', Automapper.TypeMap chooses SourceClass.GetType()
+        // Since the name of the parameter is 'type', MapZilla.TypeMap chooses SourceClass.GetType()
         // to fulfill the dependency, causing an InvalidCastException during Mapper.Map()
         public DestinationClass(Int32 type)
         {
@@ -27,7 +29,7 @@ public class CorrectCtorIsPickedOnDestinationType : NonValidatingSpecBase
         Mapper.Map<DestinationClass>(source);
     }
 }
-public class MemberNamedTypeWrong : AutoMapperSpecBase
+public class MemberNamedTypeWrong : MapZillaSpecBase
 {
     public class SourceClass
     {

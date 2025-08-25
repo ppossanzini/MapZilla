@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Mappers;
+﻿using MapZilla;
 
-public class ConstructorMapperTests : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Mappers;
+
+public class ConstructorMapperTests : MapZillaSpecBase
 {
     class Destination
     {

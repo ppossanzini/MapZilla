@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests
+using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace Indexers
     {
-        public class When_mapping_to_a_destination_with_an_indexer_property : AutoMapperSpecBase
+        public class When_mapping_to_a_destination_with_an_indexer_property : MapZillaSpecBase
         {
             private Destination _result;
 

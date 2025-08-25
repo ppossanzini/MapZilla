@@ -1,6 +1,7 @@
-﻿using AutoMapper.QueryableExtensions.Impl;
-namespace AutoMapper.UnitTests.Projection;
-public class ProjectionMappers : AutoMapperSpecBase
+﻿using MapZilla;
+using MapZilla.QueryableExtensions.Impl;
+namespace MapZilla.UnitTests.Projection;
+public class ProjectionMappers : MapZillaSpecBase
 {
     class Source
     {

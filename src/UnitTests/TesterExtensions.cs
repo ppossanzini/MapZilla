@@ -1,4 +1,4 @@
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
 public static class StopgapNBehaveExtensions
 {

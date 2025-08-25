@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class AssertConfigurationIsValidNullables : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class AssertConfigurationIsValidNullables : MapZillaSpecBase
 {
     class Source
     {

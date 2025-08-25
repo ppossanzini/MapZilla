@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests.Bug
+using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace AddingConfigurationForNonMatchingDestinationMember
     {
@@ -23,7 +25,7 @@ namespace AutoMapper.UnitTests.Bug
             [Fact]
             public void Should_show_configuration_error()
             {
-                typeof (AutoMapperConfigurationException).ShouldBeThrownBy(AssertConfigurationIsValid);
+                typeof (MapZillaConfigurationException).ShouldBeThrownBy(AssertConfigurationIsValid);
             }
         }
     }

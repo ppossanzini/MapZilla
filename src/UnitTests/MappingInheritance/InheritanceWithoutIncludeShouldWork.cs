@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.MappingInheritance;
-public class InheritanceWithoutIncludeShouldWork : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.MappingInheritance;
+public class InheritanceWithoutIncludeShouldWork : MapZillaSpecBase
 {
     public class FooBase { }
     public class Foo : FooBase { }

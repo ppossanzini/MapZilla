@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class DestinationValueInitializedByCtorBug : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class DestinationValueInitializedByCtorBug : MapZillaSpecBase
 {
     public class ItemToMapDto
     {
@@ -51,6 +53,6 @@ public class DestinationValueInitializedByCtorBug : AutoMapperSpecBase
         }
 
         Mapper.Map<List<ItemToMap>, List<ItemToMapDto>>(entities);
-        typeof(AutoMapperMappingException).ShouldNotBeThrownBy(() => Mapper.Map<List<ItemToMap>, List<ItemToMapDto>>(entities));
+        typeof(MapZillaMappingException).ShouldNotBeThrownBy(() => Mapper.Map<List<ItemToMap>, List<ItemToMapDto>>(entities));
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class EnumToNullableEnum : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class EnumToNullableEnum : MapZillaSpecBase
 {
     Destination _destination;
     public enum SomeEnum { Foo, Bar }

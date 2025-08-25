@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Mappers.ReadOnlyDictionaryMapper;
+﻿using MapZilla;
 
-public class When_mapping_to_interface_readonly_dictionary : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Mappers.ReadOnlyDictionaryMapper;
+
+public class When_mapping_to_interface_readonly_dictionary : MapZillaSpecBase
 {
     public class Source
     {
@@ -37,7 +39,7 @@ public class When_mapping_to_interface_readonly_dictionary : AutoMapperSpecBase
         dest.Values.ShouldBe(values);
     }
 }
-public class When_mapping_to_concrete_readonly_dictionary : AutoMapperSpecBase
+public class When_mapping_to_concrete_readonly_dictionary : MapZillaSpecBase
 {
     public class Source
     {

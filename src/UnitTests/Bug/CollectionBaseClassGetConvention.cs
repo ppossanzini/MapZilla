@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class CollectionBaseClassGetConvention : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class CollectionBaseClassGetConvention : MapZillaSpecBase
 {
     Destination _destination;
     static int[] SomeCollection = new[] { 1, 2, 3 };

@@ -1,6 +1,7 @@
 ﻿using System.Dynamic;
+using MapZilla;
 
-namespace AutoMapper.UnitTests.Mappers.Dynamic;
+namespace MapZilla.UnitTests.Mappers.Dynamic;
 
 class Destination
 {

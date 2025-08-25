@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class BasicFlattening : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class BasicFlattening : MapZillaSpecBase
 {
     public class Address
     {
@@ -110,7 +112,7 @@ public class BasicFlattening : AutoMapperSpecBase
     }
 }
 
-public class NullFlattening : AutoMapperSpecBase
+public class NullFlattening : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -145,7 +147,7 @@ public class NullFlattening : AutoMapperSpecBase
     }
 }
 
-public class NullTypeMapFlattening : AutoMapperSpecBase
+public class NullTypeMapFlattening : MapZillaSpecBase
 {
     private OrderDTO _dto;
 
@@ -227,5 +229,5 @@ public class FlatteningWithSourceValidation : NonValidatingSpecBase
     protected override MapperConfiguration CreateConfiguration() => new(cfg => cfg.CreateMap<Customer, CustomerDTO>(MemberList.Source).ForMember(d=>d.Id, o=>o.MapFrom(s=>s.AnotherId)));
     [Fact]
     public void Should_validate() =>
-        new Action(AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>().Errors.Single().UnmappedPropertyNames.Single().ShouldBe(nameof(Address.Id));
+        new Action(AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>().Errors.Single().UnmappedPropertyNames.Single().ShouldBe(nameof(Address.Id));
 }

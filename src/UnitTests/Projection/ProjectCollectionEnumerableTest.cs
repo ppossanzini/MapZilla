@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Projection;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
 
 public class ProjectCollectionEnumerableTest
 {

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class SourceValidationWithInheritance : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class SourceValidationWithInheritance : MapZillaSpecBase
 {
     public abstract class FormElement2
     {
@@ -61,7 +63,7 @@ public class SourceValidationWithInheritance : AutoMapperSpecBase
     public void Validate() => AssertConfigurationIsValid();
 }
 
-public class SourceValidationWithIgnore: AutoMapperSpecBase
+public class SourceValidationWithIgnore: MapZillaSpecBase
 {
     public abstract class FormElement2
     {

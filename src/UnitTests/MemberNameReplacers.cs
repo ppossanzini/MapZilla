@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
 
 public class When_using_a_member_name_replacer : NonValidatingSpecBase
 {

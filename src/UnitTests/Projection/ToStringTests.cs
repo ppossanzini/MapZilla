@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class ToStringTests : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class ToStringTests : MapZillaSpecBase
 {
     private Dest[] _dests;
 
@@ -38,7 +40,7 @@ public class ToStringTests : AutoMapperSpecBase
     }
 }
 
-public class NullableToStringTests : AutoMapperSpecBase
+public class NullableToStringTests : MapZillaSpecBase
 {
     private Dest[] _dests;
 

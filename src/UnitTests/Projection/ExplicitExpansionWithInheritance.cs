@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Projection;
+﻿using MapZilla;
 
-public class ExplicitExpansionWithInheritance : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Projection;
+
+public class ExplicitExpansionWithInheritance : MapZillaSpecBase
 {
     abstract class EntityBase
     {

@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests;
+using MapZilla;
 
-public class AutoMapperTester : IDisposable
+namespace MapZilla.UnitTests;
+
+public class MapZillaTester : IDisposable
 {
     [Fact]
     public void Should_be_able_to_handle_derived_proxy_types()

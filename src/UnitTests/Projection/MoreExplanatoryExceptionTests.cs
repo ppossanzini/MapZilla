@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Projection;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
 
 public class MoreExplanatoryExceptionTests
 {
@@ -10,7 +12,7 @@ public class MoreExplanatoryExceptionTests
             cfg.CreateProjection<EntitySource, EntityDestination>());
 
         // Act
-        var exception = Assert.Throws<AutoMapperMappingException>(() =>
+        var exception = Assert.Throws<MapZillaMappingException>(() =>
             new EntitySource[0].AsQueryable().ProjectTo<EntityDestination>(config));
 
         // Assert

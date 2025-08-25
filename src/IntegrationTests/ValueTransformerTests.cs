@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests
 {
     namespace ValueTransformerTests
     {

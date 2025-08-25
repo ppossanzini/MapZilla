@@ -1,6 +1,7 @@
 ﻿using System.Collections.Specialized;
+using MapZilla;
 
-namespace AutoMapper.UnitTests.Mappers;
+namespace MapZilla.UnitTests.Mappers;
 
 public class NameValueCollectionMapperTests
 {

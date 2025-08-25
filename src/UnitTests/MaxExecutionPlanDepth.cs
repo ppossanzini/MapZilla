@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
 
-public class MaxExecutionPlanDepth : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class MaxExecutionPlanDepth : MapZillaSpecBase
 {
     class Source
     {
@@ -103,7 +105,7 @@ public class MaxExecutionPlanDepth : AutoMapperSpecBase
         map.PropertyMaps.First().Inline.ShouldBeTrue();
     }
 }
-public class MaxExecutionPlanDepthDefault : AutoMapperSpecBase
+public class MaxExecutionPlanDepthDefault : MapZillaSpecBase
 {
     class Source
     {
@@ -205,7 +207,7 @@ public class MaxExecutionPlanDepthDefault : AutoMapperSpecBase
         map.PropertyMaps.First().Inline.ShouldBeTrue();
     }
 }
-public class MaxExecutionPlanDepthWithPreserveReferences : AutoMapperSpecBase
+public class MaxExecutionPlanDepthWithPreserveReferences : MapZillaSpecBase
 {
     class Source
     {
@@ -307,7 +309,7 @@ public class MaxExecutionPlanDepthWithPreserveReferences : AutoMapperSpecBase
         map.PropertyMaps.First().Inline.ShouldBeFalse();
     }
 }
-public class InlineWithoutPreserveReferences : AutoMapperSpecBase
+public class InlineWithoutPreserveReferences : MapZillaSpecBase
 {
     class Source
     {

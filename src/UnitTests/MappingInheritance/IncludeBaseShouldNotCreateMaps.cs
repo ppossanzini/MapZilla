@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.MappingInheritance;
+﻿using MapZilla;
 
-public class IncludeBaseShouldNotCreateMaps : AutoMapperSpecBase
+namespace MapZilla.UnitTests.MappingInheritance;
+
+public class IncludeBaseShouldNotCreateMaps : MapZillaSpecBase
 {
     public abstract class BaseBaseSource { }
     public class BaseSource : BaseBaseSource

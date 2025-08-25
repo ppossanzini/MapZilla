@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Bug;
-public class NullArrayBug : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
+public class NullArrayBug : MapZillaSpecBase
 {
     private static Source _source;
     private Destination _destination;

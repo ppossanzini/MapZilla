@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests;
+using MapZilla;
+
+namespace MapZilla.UnitTests;
 
 public class Nullable_conversion_operator : NonValidatingSpecBase
 {

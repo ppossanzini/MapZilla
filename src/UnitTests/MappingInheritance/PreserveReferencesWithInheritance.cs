@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace Source
     {
@@ -69,7 +71,7 @@
         }
     }
 
-    public class PreserveReferencesWithInheritance : AutoMapperSpecBase
+    public class PreserveReferencesWithInheritance : MapZillaSpecBase
     {
         List<Target.Member> _destination;
 

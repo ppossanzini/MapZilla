@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class EFCollections : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class EFCollections : MapZillaSpecBase
 {
     private Dest _dest;
 

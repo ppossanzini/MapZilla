@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class CollectionWhere : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class CollectionWhere : MapZillaSpecBase
 {
     private Destination _destination;
     private List<int> _sourceList = new List<int>() { 1, 2, 3 };

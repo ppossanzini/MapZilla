@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.ForAllMembers;
-public class When_conditionally_applying_a_resolver_globally : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.ForAllMembers;
+public class When_conditionally_applying_a_resolver_globally : MapZillaSpecBase
 {
     public class Source
     {
@@ -43,7 +45,7 @@ public class When_conditionally_applying_a_resolver_globally : AutoMapperSpecBas
         dest.OtherDate.ShouldBe(source.OtherDate.AddDays(1));
     }
 }
-public class When_conditionally_applying_a_resolver_per_profile : AutoMapperSpecBase
+public class When_conditionally_applying_a_resolver_per_profile : MapZillaSpecBase
 {
     public class Source
     {
@@ -77,7 +79,7 @@ public class When_conditionally_applying_a_resolver_per_profile : AutoMapperSpec
         dest.OtherDate.ShouldBe(source.OtherDate.AddDays(1));
     }
 }
-public class ForAllPropertyMaps_ConvertUsing : AutoMapperSpecBase
+public class ForAllPropertyMaps_ConvertUsing : MapZillaSpecBase
 {
     public class Well
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using MapZilla;
 
-namespace AutoMapper.IntegrationTests.Inheritance;
+namespace MapZilla.IntegrationTests.Inheritance;
 
 public class ProjectToAbstractType : IntegrationTest<ProjectToAbstractType.DatabaseInitializer>
 {

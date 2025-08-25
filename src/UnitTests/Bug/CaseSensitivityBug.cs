@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Bug;
-public class CaseSensitivityBug : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
+public class CaseSensitivityBug : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

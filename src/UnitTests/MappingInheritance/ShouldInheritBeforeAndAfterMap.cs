@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.MappingInheritance;
+﻿using MapZilla;
 
-public class ShouldInheritBeforeAndAfterMapOnlyOnce : AutoMapperSpecBase
+namespace MapZilla.UnitTests.MappingInheritance;
+
+public class ShouldInheritBeforeAndAfterMapOnlyOnce : MapZillaSpecBase
 {
     int afterMapCount;
     int beforeMapCount;
@@ -38,7 +40,7 @@ public class ShouldInheritBeforeAndAfterMapOnlyOnce : AutoMapperSpecBase
     }
 }
 
-public class ShouldInheritBeforeAndAfterMapOnlyOnceIncludeBase : AutoMapperSpecBase
+public class ShouldInheritBeforeAndAfterMapOnlyOnceIncludeBase : MapZillaSpecBase
 {
     int afterMapCount;
     int beforeMapCount;

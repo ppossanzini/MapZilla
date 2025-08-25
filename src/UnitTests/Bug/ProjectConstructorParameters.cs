@@ -1,6 +1,9 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+using MapZilla.QueryableExtensions;
 
-public class ProjectConstructorParameters : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ProjectConstructorParameters : MapZillaSpecBase
 {
     SourceDto _dest;
     const int SomeValue = 15;

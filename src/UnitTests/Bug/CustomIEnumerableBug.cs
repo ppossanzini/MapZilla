@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 public class One
 {
@@ -26,7 +28,7 @@ public class StringToItemConverter : ITypeConverter<IEnumerable<string>, IEnumer
         return result;
     }
 }
-public class AutoMapperBugTest
+public class MapZillaBugTest
 {
     [Fact]
     public void ShouldMapOneToTwo()

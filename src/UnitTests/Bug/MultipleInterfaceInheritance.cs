@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class MultipleInterfaceInheritance : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class MultipleInterfaceInheritance : MapZillaSpecBase
 {
     private ThingDto _thingDto;
 

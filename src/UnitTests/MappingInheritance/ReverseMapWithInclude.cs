@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.MappingInheritance;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.MappingInheritance;
 public class ReverseMapWithInclude : NonValidatingSpecBase
 {
     public class Duck : Animal { }
@@ -27,7 +29,7 @@ public class ReverseMapWithInclude : NonValidatingSpecBase
     }
 }
 
-public class ReverseMapWithIncludeBase : AutoMapperSpecBase
+public class ReverseMapWithIncludeBase : MapZillaSpecBase
 {
     ConcreteSource _destination;
 

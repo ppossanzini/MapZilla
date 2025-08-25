@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
 
 public class IncludeBaseShouldValidateTypes
 {

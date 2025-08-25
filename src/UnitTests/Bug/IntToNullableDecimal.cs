@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class IntToNullableDecimal : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class IntToNullableDecimal : MapZillaSpecBase
 {
     private Destination _destination;
 

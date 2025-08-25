@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.MappingInheritance;
+using MapZilla;
 
-public class IncludeBaseWithNonGenericUsage : AutoMapperSpecBase
+namespace MapZilla.UnitTests.MappingInheritance;
+
+public class IncludeBaseWithNonGenericUsage : MapZillaSpecBase
 {
     class Source : SourceBase<string>
     { }
@@ -31,7 +33,7 @@ public class IncludeBaseWithNonGenericUsage : AutoMapperSpecBase
     [Fact]
     public void Validate() => AssertConfigurationIsValid();
 }
-public class IncludeBaseWithGenericUsage : AutoMapperSpecBase
+public class IncludeBaseWithGenericUsage : MapZillaSpecBase
 {
     class Source : SourceBase<string>
     { }

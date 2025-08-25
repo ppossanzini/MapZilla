@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests.BeforeAfterMapping;
+using MapZilla;
+
+namespace MapZilla.UnitTests.BeforeAfterMapping;
 public class When_configuring_before_and_after_methods
 {
     public class Source
@@ -112,7 +114,7 @@ public class When_configuring_before_and_after_methods_multiple_times
 
 }
 
-public class When_using_a_class_to_do_before_after_mappings : AutoMapperSpecBase
+public class When_using_a_class_to_do_before_after_mappings : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -177,7 +179,7 @@ public class When_using_a_class_to_do_before_after_mappings : AutoMapperSpecBase
     }
 }
 
-public class When_using_a_class_to_do_before_after_mappings_with_resolutioncontext : AutoMapperSpecBase
+public class When_using_a_class_to_do_before_after_mappings_with_resolutioncontext : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -244,7 +246,7 @@ public class When_using_a_class_to_do_before_after_mappings_with_resolutionconte
     }
 }
 
-public class MappingSpecificBeforeMapping : AutoMapperSpecBase
+public class MappingSpecificBeforeMapping : MapZillaSpecBase
 {
     private Dest _dest;
 
@@ -280,7 +282,7 @@ public class MappingSpecificBeforeMapping : AutoMapperSpecBase
     }
 }
 
-public class MappingSpecificAfterMapping : AutoMapperSpecBase
+public class MappingSpecificAfterMapping : MapZillaSpecBase
 {
     private Dest _dest;
 

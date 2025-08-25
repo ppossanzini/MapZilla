@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests
+using MapZilla;
+
+namespace MapZilla.UnitTests
 {
     namespace Internationalization
     {
-        public class When_mapping_a_source_with_non_english_property_names : AutoMapperSpecBase
+        public class When_mapping_a_source_with_non_english_property_names : MapZillaSpecBase
         {
             private OrderDto _result;
 

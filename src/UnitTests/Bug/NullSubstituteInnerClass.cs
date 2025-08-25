@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullSubstituteInnerClass : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullSubstituteInnerClass : MapZillaSpecBase
 {
     private FooDto _destination;
 

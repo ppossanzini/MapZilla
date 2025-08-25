@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.CustomMapFrom;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.CustomMapFrom;
 
 public class CustomMapFromTest : IntegrationTest<CustomMapFromTest.DatabaseInitializer>
 {

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class StructMapping : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class StructMapping : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -33,7 +35,7 @@ public class StructMapping : AutoMapperSpecBase
         _destination.Number.ShouldBe(23);
     }
 }
-public class DestinationStructMapping : AutoMapperSpecBase
+public class DestinationStructMapping : MapZillaSpecBase
 {
     struct Source
     {

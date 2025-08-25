@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests.Bug
+using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace ByteArrayBug
     {
-        public class When_mapping_byte_arrays : AutoMapperSpecBase
+        public class When_mapping_byte_arrays : MapZillaSpecBase
         {
             private Picture _source;
             private PictureDto _dest;
@@ -41,7 +43,7 @@ namespace AutoMapper.UnitTests.Bug
 
     namespace AssignableLists
     {
-        public class AutoMapperTests
+        public class MapZillaTests
         {
             [Fact]
             public void ListShouldNotMapAsReference()

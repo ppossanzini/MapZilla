@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests.MaxDepth;
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests.MaxDepth;
 
 public class MaxDepthWithCollections : IntegrationTest<MaxDepthWithCollections.DatabaseInitializer>
 {

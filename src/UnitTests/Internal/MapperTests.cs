@@ -1,4 +1,6 @@
-namespace AutoMapper.UnitTests.Tests;
+using MapZilla;
+
+namespace MapZilla.UnitTests.Tests;
 
 public class MapperTests : NonValidatingSpecBase
 {

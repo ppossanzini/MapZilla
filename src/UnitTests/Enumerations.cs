@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
-using AutoMapper.UnitTests;
-namespace AutoMapper.Tests;
-public class CreateProjectionEnum : AutoMapperSpecBase
+using MapZilla.UnitTests;
+namespace MapZilla.Tests;
+public class CreateProjectionEnum : MapZillaSpecBase
 {
     public class Source
     {
@@ -24,14 +24,14 @@ public class CreateProjectionEnum : AutoMapperSpecBase
     [Fact]
     public void Should_work() => ProjectTo<Dest>(new[] { new Source() }.AsQueryable()).Single().Value.ShouldBe(DestEnum.A);
 }
-public class InvalidStringToEnum : AutoMapperSpecBase
+public class InvalidStringToEnum : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(_=> { });
     [Fact]
-    public void Should_throw() => new Action(()=>Map<ConsoleColor>("d")).ShouldThrow<AutoMapperMappingException>().InnerException.Message.ShouldBe(
+    public void Should_throw() => new Action(()=>Map<ConsoleColor>("d")).ShouldThrow<MapZillaMappingException>().InnerException.Message.ShouldBe(
         "Requested value 'd' was not found.");
 }
-public class DefaultEnumValueToString : AutoMapperSpecBase
+public class DefaultEnumValueToString : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -62,7 +62,7 @@ public class DefaultEnumValueToString : AutoMapperSpecBase
     }
 }
 
-public class StringToNullableEnum : AutoMapperSpecBase
+public class StringToNullableEnum : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -93,7 +93,7 @@ public class StringToNullableEnum : AutoMapperSpecBase
     }
 }
 
-public class NullableEnumToString : AutoMapperSpecBase
+public class NullableEnumToString : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -419,7 +419,7 @@ public class EnumMappingFixture
         }
     }
 }
-public class When_mapping_from_a_null_object_with_an_enum : AutoMapperSpecBase
+public class When_mapping_from_a_null_object_with_an_enum : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {
@@ -451,7 +451,7 @@ public class When_mapping_from_a_null_object_with_an_enum : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_to_a_nullable_flags_enum : AutoMapperSpecBase
+public class When_mapping_to_a_nullable_flags_enum : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {
@@ -483,7 +483,7 @@ public class When_mapping_to_a_nullable_flags_enum : AutoMapperSpecBase
     }
 }
 
-public class When_mapping_from_a_null_object_with_a_nullable_enum : AutoMapperSpecBase
+public class When_mapping_from_a_null_object_with_a_nullable_enum : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {
@@ -514,7 +514,7 @@ public class When_mapping_from_a_null_object_with_a_nullable_enum : AutoMapperSp
         dest.Values.ShouldBe(default(EnumValues));
     }
 }
-public class When_mapping_from_a_null_object_with_a_nullable_enum_as_string : AutoMapperSpecBase
+public class When_mapping_from_a_null_object_with_a_nullable_enum_as_string : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {
@@ -607,7 +607,7 @@ public class When_mapping_a_flags_enum : NonValidatingSpecBase
     }
 }
 
-public class When_the_target_has_an_enummemberattribute_value : AutoMapperSpecBase
+public class When_the_target_has_an_enummemberattribute_value : MapZillaSpecBase
 {
     public enum EnumWithEnumMemberAttribute
     {
@@ -669,7 +669,7 @@ public class When_the_target_has_an_enummemberattribute_value : AutoMapperSpecBa
 }
 
 
-public class When_the_source_has_an_enummemberattribute_value : AutoMapperSpecBase
+public class When_the_source_has_an_enummemberattribute_value : MapZillaSpecBase
 {
     public enum EnumWithEnumMemberAttribute
     {

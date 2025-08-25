@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
 
 public class SomeSource
 {
@@ -17,7 +19,7 @@ public class DestinationBase
 public class IgnoreAllPropertiesWithAnInaccessibleSetterTests
 {
     [Fact]
-    public void AutoMapper_SimpleObject_IgnoresPrivateSettersInBaseClasses()
+    public void MapZilla_SimpleObject_IgnoresPrivateSettersInBaseClasses()
     {
         // Arrange
         var config = new MapperConfiguration(cfg =>

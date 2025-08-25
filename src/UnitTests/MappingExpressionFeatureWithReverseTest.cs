@@ -1,6 +1,7 @@
-﻿using AutoMapper.Features;
+﻿using MapZilla;
+using MapZilla.Features;
 
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
 public class MappingExpressionFeatureWithReverseTest
 {

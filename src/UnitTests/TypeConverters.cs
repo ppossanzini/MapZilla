@@ -1,5 +1,7 @@
-namespace AutoMapper.UnitTests.CustomMapping;
-public class StringToEnumConverter : AutoMapperSpecBase
+using MapZilla;
+
+namespace MapZilla.UnitTests.CustomMapping;
+public class StringToEnumConverter : MapZillaSpecBase
 {
     class Source
     {
@@ -21,7 +23,7 @@ public class StringToEnumConverter : AutoMapperSpecBase
         Map<Destination>(new Source()).Enum.ShouldBe(ConsoleColor.DarkCyan);
     }
 }
-public class NullableConverter : AutoMapperSpecBase
+public class NullableConverter : MapZillaSpecBase
 {
     public enum GreekLetters
     {
@@ -43,7 +45,7 @@ public class NullableConverter : AutoMapperSpecBase
     }
 }
 
-public class MissingConverter : AutoMapperSpecBase
+public class MissingConverter : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(c =>
     {
@@ -55,11 +57,11 @@ public class MissingConverter : AutoMapperSpecBase
     public void Should_report_the_missing_converter()
     {
         new Action(()=>Mapper.Map<int, int>(0))
-            .ShouldThrowException<AutoMapperMappingException>(e=>e.Message.ShouldBe("Cannot create an instance of type AutoMapper.ITypeConverter`2[System.Int32,System.Int32]"));
+            .ShouldThrowException<MapZillaMappingException>(e=>e.Message.ShouldBe("Cannot create an instance of type MapZilla.ITypeConverter`2[System.Int32,System.Int32]"));
     }
 }
 
-public class DecimalAndNullableDecimal : AutoMapperSpecBase
+public class DecimalAndNullableDecimal : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -99,7 +101,7 @@ public class DecimalAndNullableDecimal : AutoMapperSpecBase
     }
 }
 
-public class When_converting_to_string : AutoMapperSpecBase
+public class When_converting_to_string : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -148,7 +150,7 @@ public class When_converting_to_string : AutoMapperSpecBase
     }
 }
 
-public class When_specifying_type_converters_for_object_mapper_types : AutoMapperSpecBase
+public class When_specifying_type_converters_for_object_mapper_types : MapZillaSpecBase
 {
     class Source
     {
@@ -178,7 +180,7 @@ public class When_specifying_type_converters_for_object_mapper_types : AutoMappe
     }
 }
 
-public class When_specifying_type_converters : AutoMapperSpecBase
+public class When_specifying_type_converters : MapZillaSpecBase
 {
     private Destination _result;
 
@@ -228,7 +230,7 @@ public class When_specifying_type_converters : AutoMapperSpecBase
         {
             Value1 = "5",
             Value2 = "01/01/2000",
-            Value3 = "AutoMapper.UnitTests.CustomMapping.When_specifying_type_converters+Destination"
+            Value3 = "MapZilla.UnitTests.CustomMapping.When_specifying_type_converters+Destination"
         };
 
         _result = Mapper.Map<Source, Destination>(source);
@@ -253,7 +255,7 @@ public class When_specifying_type_converters : AutoMapperSpecBase
     }
 }
 
-public class When_specifying_type_converters_on_types_with_incompatible_members : AutoMapperSpecBase
+public class When_specifying_type_converters_on_types_with_incompatible_members : MapZillaSpecBase
 {
     private ParentDestination _result;
 
@@ -342,7 +344,7 @@ public class When_specifying_a_type_converter_for_a_non_generic_configuration : 
     }
 }
 
-public class When_specifying_a_non_generic_type_converter_for_a_non_generic_configuration : AutoMapperSpecBase
+public class When_specifying_a_non_generic_type_converter_for_a_non_generic_configuration : MapZillaSpecBase
 {
     private Destination _result;
 

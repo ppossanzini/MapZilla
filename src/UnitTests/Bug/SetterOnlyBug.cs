@@ -1,8 +1,10 @@
-﻿namespace AutoMapper.UnitTests.Bug
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace SetterOnlyBug
     {
-        public class MappingTests : AutoMapperSpecBase
+        public class MappingTests : MapZillaSpecBase
         {
             protected override MapperConfiguration CreateConfiguration() => new(cfg =>
             {

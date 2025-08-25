@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class InternalProperties : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class InternalProperties : MapZillaSpecBase
 {
     public int SomeValue = 2354;
     private Destination _destination;

@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests;
-public class ForPathGenericsSource : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests;
+public class ForPathGenericsSource : MapZillaSpecBase
 {
     class Source<T>
     {
@@ -17,7 +19,7 @@ public class ForPathGenericsSource : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Map<Destination>(new Source<int> { Inner = new() { Id = 42 } }).InnerId.ShouldBe(42);
 }
-public class ForPathGenerics : AutoMapperSpecBase
+public class ForPathGenerics : MapZillaSpecBase
 {
     class Source<T>
     {
@@ -35,7 +37,7 @@ public class ForPathGenerics : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Map<Destination<int>>(new Source<int> { Inner = new() { Id = 42 } }).InnerId.ShouldBe(42);
 }
-public class ReadonlyPropertiesGenerics : AutoMapperSpecBase
+public class ReadonlyPropertiesGenerics : MapZillaSpecBase
 {
     class Source
     {
@@ -69,12 +71,12 @@ public class ConstructorValidationGenerics : NonValidatingSpecBase
     [Fact]
     public void Should_work()
     {
-        var error = new Action(AssertConfigurationIsValid).ShouldThrow<AutoMapperConfigurationException>().Errors.Single();
+        var error = new Action(AssertConfigurationIsValid).ShouldThrow<MapZillaConfigurationException>().Errors.Single();
         error.CanConstruct.ShouldBeFalse();
         error.UnmappedPropertyNames.Single().ShouldBe("OtherValue");
     }
 }
-public class SealGenerics : AutoMapperSpecBase
+public class SealGenerics : MapZillaSpecBase
 {
     public record SourceProperty<T>(T Value, SourceProperty<T> Recursive = null);
     public record DestProperty<T>(T Value, DestProperty<T> Recursive = null);
@@ -100,7 +102,7 @@ public class SealGenerics : AutoMapperSpecBase
         Map<UserProperties>(new User(new(guid))).UserStoreId.Value.ShouldBe(guid);
     }
 }
-public class OpenGenerics_With_Struct : AutoMapperSpecBase
+public class OpenGenerics_With_Struct : MapZillaSpecBase
 {
     public struct Id<T>
     {
@@ -109,7 +111,7 @@ public class OpenGenerics_With_Struct : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Map<long>(new Id<string>()).ShouldBe(42);
 }
-public class OpenGenerics_With_Base_Generic : AutoMapperSpecBase
+public class OpenGenerics_With_Base_Generic : MapZillaSpecBase
 {
     public class Foo<T>
     {
@@ -126,7 +128,7 @@ public class OpenGenerics_With_Base_Generic : AutoMapperSpecBase
     [Fact]
     public void Can_map_base_members() => Map<Bar<int>>(new Foo<int> { Value1 = 5 }).Value2.ShouldBe(5);
 }
-public class GenericMapsAsNonGeneric : AutoMapperSpecBase
+public class GenericMapsAsNonGeneric : MapZillaSpecBase
 {
     class Source
     {
@@ -147,7 +149,7 @@ public class GenericMapsAsNonGeneric : AutoMapperSpecBase
     [Fact]
     public void Should_work() => Mapper.Map<Destination<string>>(new Source { Value = 42 }).Value.ShouldBe("42");
 }
-public class GenericMapsPriority : AutoMapperSpecBase
+public class GenericMapsPriority : MapZillaSpecBase
 {
     class Source<T>
     {
@@ -171,7 +173,7 @@ public class GenericMapsPriority : AutoMapperSpecBase
         Mapper.Map<Destination<string>>(new Source<string> { Value = "42" }).Value.ShouldBe("42");
     }
 }
-public class GenericMapWithUntypedMap : AutoMapperSpecBase
+public class GenericMapWithUntypedMap : MapZillaSpecBase
 {
     class Source<T>
     {
@@ -186,7 +188,7 @@ public class GenericMapWithUntypedMap : AutoMapperSpecBase
     public void Should_work() => new Action(() => Mapper.Map(new Source<int>(), null, typeof(Destination<>)))
         .ShouldThrow<ArgumentException>().Message.ShouldStartWith($"Type {typeof(Destination<>).FullName}[T] is a generic type definition");
 }
-public class GenericValueResolverTypeMismatch : AutoMapperSpecBase
+public class GenericValueResolverTypeMismatch : MapZillaSpecBase
 {
     class Source<T>
     {
@@ -205,7 +207,7 @@ public class GenericValueResolverTypeMismatch : AutoMapperSpecBase
     [Fact]
     public void Should_map_ok() => Map<Destination>(new Source<object>()).Value.ShouldBe(int.MaxValue.ToString());
 }
-public class GenericValueResolver : AutoMapperSpecBase
+public class GenericValueResolver : MapZillaSpecBase
 {
     class Destination
     {
@@ -321,7 +323,7 @@ public class GenericValueResolver : AutoMapperSpecBase
     }
 }
 
-public class GenericMemberValueResolver : AutoMapperSpecBase
+public class GenericMemberValueResolver : MapZillaSpecBase
 {
     class Destination
     {
@@ -374,7 +376,7 @@ public class GenericMemberValueResolver : AutoMapperSpecBase
     }
 }
 
-public class RecursiveOpenGenerics : AutoMapperSpecBase
+public class RecursiveOpenGenerics : MapZillaSpecBase
 {
     public class SourceTree<T>
     {
@@ -431,7 +433,7 @@ public class OpenGenericsValidation : NonValidatingSpecBase
     public void Should_report_unmapped_property()
     {
         new Action(Configuration.AssertConfigurationIsValid)
-            .ShouldThrow<AutoMapperConfigurationException>()
+            .ShouldThrow<MapZillaConfigurationException>()
             .Errors.Single().UnmappedPropertyNames.Single().ShouldBe("A");
     }
 }
@@ -462,11 +464,11 @@ public class OpenGenericsProfileValidationNonGenericMembers : NonValidatingSpecB
     [Fact]
     public void Should_report_unmapped_property() =>
         new Action(()=> AssertConfigurationIsValid<MyProfile>())
-            .ShouldThrow<AutoMapperConfigurationException>()
+            .ShouldThrow<MapZillaConfigurationException>()
             .Errors.Single().UnmappedPropertyNames.Single().ShouldBe("A");
 }
 
-public class OpenGenericsProfileValidation : AutoMapperSpecBase
+public class OpenGenericsProfileValidation : MapZillaSpecBase
 {
     public class Source<T>
     {
@@ -554,7 +556,7 @@ public class OpenGenerics
     }
 }
 
-public class OpenGenerics_With_MemberConfiguration : AutoMapperSpecBase
+public class OpenGenerics_With_MemberConfiguration : MapZillaSpecBase
 {
     public class Foo<T>
     {
@@ -590,7 +592,7 @@ public class OpenGenerics_With_MemberConfiguration : AutoMapperSpecBase
     }
 }
 
-public class OpenGenerics_With_UntypedMapFrom : AutoMapperSpecBase
+public class OpenGenerics_With_UntypedMapFrom : MapZillaSpecBase
 {
     public class Foo<T>
     {
@@ -614,7 +616,7 @@ public class OpenGenerics_With_UntypedMapFrom : AutoMapperSpecBase
     }
 }
 
-public class OpenGenerics_With_UntypedMapFromStructs : AutoMapperSpecBase
+public class OpenGenerics_With_UntypedMapFromStructs : MapZillaSpecBase
 {
     public class Foo<T> where T : struct
     {

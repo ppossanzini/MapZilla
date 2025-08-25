@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class GenericsTests : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class GenericsTests : MapZillaSpecBase
 {
     private Dest<string>[] _dests;
 

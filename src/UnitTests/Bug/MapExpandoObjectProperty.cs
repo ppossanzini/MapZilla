@@ -1,8 +1,9 @@
 using System.Dynamic;
+using MapZilla;
 
-namespace AutoMapper.UnitTests.Bug;
+namespace MapZilla.UnitTests.Bug;
 
-public class MapExpandoObjectProperty : AutoMapperSpecBase
+public class MapExpandoObjectProperty : MapZillaSpecBase
 {
 
     class From

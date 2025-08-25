@@ -1,8 +1,10 @@
-namespace AutoMapper.UnitTests.Bug
+using MapZilla;
+
+namespace MapZilla.UnitTests.Bug
 {
     namespace InterfaceMultipleInheritance
     {
-        public class InterfaceMultipleInheritanceBug1036 : AutoMapperSpecBase
+        public class InterfaceMultipleInheritanceBug1036 : MapZillaSpecBase
         {
             private MapTo _destination;
 
@@ -100,7 +102,7 @@ namespace AutoMapper.UnitTests.Bug
             }
         }
 
-        public class InterfaceMultipleInheritanceBug1016 : AutoMapperSpecBase
+        public class InterfaceMultipleInheritanceBug1016 : MapZillaSpecBase
         {
             private class4DTO _destination;
 

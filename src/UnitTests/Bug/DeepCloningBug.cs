@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class DeepCloningBug : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class DeepCloningBug : MapZillaSpecBase
 {
     private Outer _source;
     private Outer _dest;

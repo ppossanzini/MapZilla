@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class SubclassMappings : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class SubclassMappings : MapZillaSpecBase
 {
     public class Source
     {

@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class ConstructUsingReturnsNull : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class ConstructUsingReturnsNull : MapZillaSpecBase
 {
     class Source
     {
@@ -20,6 +22,6 @@ public class ConstructUsingReturnsNull : AutoMapperSpecBase
     public void Should_throw_when_construct_using_returns_null()
     {
         new Action(() => Mapper.Map<Source, Destination>(new Source()))
-            .ShouldThrowException<AutoMapperMappingException>(ex=>ex.InnerException.ShouldBeOfType<NullReferenceException>());
+            .ShouldThrowException<MapZillaMappingException>(ex=>ex.InnerException.ShouldBeOfType<NullReferenceException>());
     }
 }

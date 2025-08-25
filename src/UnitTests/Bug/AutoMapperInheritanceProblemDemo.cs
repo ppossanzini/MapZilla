@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class SettersInBaseClasses : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class SettersInBaseClasses : MapZillaSpecBase
 {
     protected override MapperConfiguration CreateConfiguration() => new(cfg =>
     {

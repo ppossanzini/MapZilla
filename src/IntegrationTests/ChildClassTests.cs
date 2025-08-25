@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.IntegrationTests
+﻿using MapZilla;
+
+namespace MapZilla.IntegrationTests
 {
     namespace ChildClassTests
     {
@@ -60,7 +62,7 @@
             });
 
             [Fact]
-            public void AutoMapperEFRelationsTest()
+            public void MapZillaEFRelationsTest()
             {
                 using (var context = new TestContext())
                 {
@@ -93,7 +95,7 @@
                 }
             }
             [Fact]
-            public void MapShouldThrow() => new Action(() => Mapper.Map<SubDTO>(new Sub())).ShouldThrow<AutoMapperConfigurationException>().Message.ShouldBe("CreateProjection works with ProjectTo, not with Map.");
+            public void MapShouldThrow() => new Action(() => Mapper.Map<SubDTO>(new Sub())).ShouldThrow<MapZillaConfigurationException>().Message.ShouldBe("CreateProjection works with ProjectTo, not with Map.");
         }
     }
 }

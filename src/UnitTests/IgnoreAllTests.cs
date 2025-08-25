@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests;
+using MapZilla;
 
-public class When_overriding_global_ignore : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class When_overriding_global_ignore : MapZillaSpecBase
 {
     Destination _destination;
 

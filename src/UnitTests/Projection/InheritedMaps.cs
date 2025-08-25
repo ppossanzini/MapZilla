@@ -1,4 +1,6 @@
-﻿namespace AutoMapper.UnitTests.Projection
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection
 {
     namespace InheritedMaps
     {
@@ -17,7 +19,7 @@
             public int Value { get; set; }
         }
 
-        public class When_projecting_and_inheriting_maps : AutoMapperSpecBase
+        public class When_projecting_and_inheriting_maps : MapZillaSpecBase
         {
             private Dest[] _dest;
 

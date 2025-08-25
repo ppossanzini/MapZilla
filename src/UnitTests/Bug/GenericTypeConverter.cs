@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class GenericTypeConverterWithTwoArguments : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class GenericTypeConverterWithTwoArguments : MapZillaSpecBase
 {
     List<object> _destination;
 
@@ -28,7 +30,7 @@ public class GenericTypeConverterWithTwoArguments : AutoMapperSpecBase
     }
 }
 
-public class GenericTypeConverter : AutoMapperSpecBase
+public class GenericTypeConverter : MapZillaSpecBase
 {
     Destination<int> _destination;
     OtherDestination<int> _otherDestination;

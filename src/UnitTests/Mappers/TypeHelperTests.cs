@@ -1,4 +1,4 @@
-namespace AutoMapper.UnitTests.Mappers;
+namespace MapZilla.UnitTests.Mappers;
 
 public class TypeHelperTests
 {

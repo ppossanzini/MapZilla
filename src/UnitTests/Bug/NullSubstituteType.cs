@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullSubstituteType : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullSubstituteType : MapZillaSpecBase
 {
     private Destination _destination;
 

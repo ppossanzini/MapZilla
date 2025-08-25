@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests.Bug;
+using MapZilla;
 
-public class NullableBytesAndEnums : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullableBytesAndEnums : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -37,7 +39,7 @@ public class NullableBytesAndEnums : AutoMapperSpecBase
     }
 }
 
-public class NullableLong : AutoMapperSpecBase
+public class NullableLong : MapZillaSpecBase
 {
     private Destination _destination;
 
@@ -68,7 +70,7 @@ public class NullableLong : AutoMapperSpecBase
     }
 }
 
-public class NullableShortWithCustomMapFrom : AutoMapperSpecBase
+public class NullableShortWithCustomMapFrom : MapZillaSpecBase
 {
     public class Source
     {

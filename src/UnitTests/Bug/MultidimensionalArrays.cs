@@ -1,8 +1,9 @@
-﻿using AutoMapper.Internal.Mappers;
+﻿using MapZilla;
+using MapZilla.Internal.Mappers;
 
-namespace AutoMapper.UnitTests.Bug;
+namespace MapZilla.UnitTests.Bug;
 
-public class MultidimensionalArrays : AutoMapperSpecBase
+public class MultidimensionalArrays : MapZillaSpecBase
 {
     const int SomeValue = 154;
     Source _e = new Source(SomeValue);

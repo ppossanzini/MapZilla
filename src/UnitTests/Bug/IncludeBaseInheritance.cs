@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class IncludeBaseInheritance : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class IncludeBaseInheritance : MapZillaSpecBase
 {
     DestinationLevel2 _destination;
 

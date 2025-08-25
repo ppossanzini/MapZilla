@@ -1,6 +1,8 @@
-namespace AutoMapper.UnitTests;
+using MapZilla;
 
-public class When_using_non_generic_ResolveUsing : AutoMapperSpecBase
+namespace MapZilla.UnitTests;
+
+public class When_using_non_generic_ResolveUsing : MapZillaSpecBase
 {
     private Destination _destination;
 

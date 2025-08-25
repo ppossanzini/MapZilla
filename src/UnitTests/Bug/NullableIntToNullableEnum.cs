@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class NullableIntToNullableEnum : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class NullableIntToNullableEnum : MapZillaSpecBase
 {
     Destination _destination;
 

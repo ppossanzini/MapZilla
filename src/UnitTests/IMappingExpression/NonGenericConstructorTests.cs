@@ -1,5 +1,7 @@
-﻿namespace AutoMapper.UnitTests.Projection;
-public class NonGenericConstructorTests : AutoMapperSpecBase
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Projection;
+public class NonGenericConstructorTests : MapZillaSpecBase
 {
     private Dest[] _dest;
 

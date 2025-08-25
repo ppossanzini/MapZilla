@@ -1,6 +1,8 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
 
-public class DuplicateExtensionMethods : AutoMapperSpecBase
+namespace MapZilla.UnitTests.Bug;
+
+public class DuplicateExtensionMethods : MapZillaSpecBase
 {
     public class Outlay
     {

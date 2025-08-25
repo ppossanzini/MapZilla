@@ -1,8 +1,9 @@
-using static AutoMapper.UnitTests.Bug.MapFromClosureBug;
+using MapZilla;
+using static MapZilla.UnitTests.Bug.MapFromClosureBug;
 
-namespace AutoMapper.UnitTests;
+namespace MapZilla.UnitTests;
 
-public class When_specifying_a_mapping_order_for_base_members : AutoMapperSpecBase
+public class When_specifying_a_mapping_order_for_base_members : MapZillaSpecBase
 {
     Destination _destination;
 
@@ -60,7 +61,7 @@ public class When_specifying_a_mapping_order_for_base_members : AutoMapperSpecBa
     });
 }
 
-public class When_specifying_a_mapping_order : AutoMapperSpecBase
+public class When_specifying_a_mapping_order : MapZillaSpecBase
 {
     private Destination _result;
 
@@ -111,7 +112,7 @@ public class When_specifying_a_mapping_order : AutoMapperSpecBase
         _result.Value1.ShouldBe(25);
     }
 }
-public class NullMappingOrderComesFirst : AutoMapperSpecBase
+public class NullMappingOrderComesFirst : MapZillaSpecBase
 {
     public class Source
     {

@@ -1,7 +1,9 @@
-﻿namespace AutoMapper.UnitTests.Bug;
+﻿using MapZilla;
+
+namespace MapZilla.UnitTests.Bug;
 
 // Bug #511
-// https://github.com/AutoMapper/AutoMapper/issues/511
+// https://github.com/MapZilla/MapZilla/issues/511
 public class ReadOnlyCollectionMappingBug
 {
     class Source { public int X { get; set; } }
