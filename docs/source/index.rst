@@ -1,6 +1,8 @@
 MapZilla
 ==========
 
+MapZilla is a derivate Work of Automapper (version 14) from Jimmy Bogard 
+
 A convention-based object-object mapper.
 
 MapZilla uses a fluent configuration API to define an object-object

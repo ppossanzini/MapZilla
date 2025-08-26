@@ -32,7 +32,7 @@ html_theme_options = {
     'logo_only': True,
     'display_version': False
 }
-html_logo = 'img/logo.png'
+html_logo = 'img/logo2.png'
 
 
 # -- Options for EPUB output
