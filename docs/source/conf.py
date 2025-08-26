@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'AutoMapper'
-copyright = '2024, Jimmy Bogard'
-author = 'Jimmy Bogard'
+project = 'MapZilla'
+copyright = '2025, Paolo Possanzini- This is a derivate Work of Automapper (v.14) from Jimmy Bogard'
+author = 'Paolo Possanzini'
 
 # -- General configuration
 

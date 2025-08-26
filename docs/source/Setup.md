@@ -15,13 +15,13 @@ Starting with 9.0, the static API is no longer available.
 
 ## Gathering configuration before initialization
 
-AutoMapper also lets you gather configuration before initialization:
+MapZilla also lets you gather configuration before initialization:
 
 ```c#
 var cfg = new MapperConfigurationExpression();
 cfg.CreateMap<Source, Dest>();
 cfg.AddProfile<MyProfile>();
-MyBootstrapper.InitAutoMapper(cfg);
+MyBootstrapper.InitMapZilla(cfg);
 
 var mapperConfig = new MapperConfiguration(cfg);
 IMapper mapper = new Mapper(mapperConfig);
@@ -52,6 +52,6 @@ public class ProductsController : Controller {
 
 ## Unsupported operations
 
-One "feature" of AutoMapper allowed you to modify configuration at runtime. That caused many problems, so the new API does not allow you to do this. You'll need to move all your `Mapper.CreateMap` calls into a profile.
+One "feature" of MapZilla allowed you to modify configuration at runtime. That caused many problems, so the new API does not allow you to do this. You'll need to move all your `Mapper.CreateMap` calls into a profile.
 
 Dynamic mapping, such as `Mapper.DynamicMap`, is no longer possible.

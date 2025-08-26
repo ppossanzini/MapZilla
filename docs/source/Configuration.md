@@ -85,7 +85,7 @@ var configuration = new MapperConfiguration(cfg =>
 );
 ```
 
-AutoMapper will scan the designated assemblies for classes inheriting from Profile and add them to the configuration.
+MapZilla will scan the designated assemblies for classes inheriting from Profile and add them to the configuration.
 
 ## Naming Conventions
 
@@ -166,7 +166,7 @@ var configuration = new MapperConfiguration(cfg => {
 configuration.AssertConfigurationIsValid();
 ```
 
-By default AutoMapper recognizes the prefix "Get", if you need to clear the prefix:
+By default MapZilla recognizes the prefix "Get", if you need to clear the prefix:
 
 ```c#
 var configuration = new MapperConfiguration(cfg => {
@@ -177,7 +177,7 @@ var configuration = new MapperConfiguration(cfg => {
 
 ## Global property/field filtering
 
-By default, AutoMapper tries to map every public property/field. You can filter out properties/fields with the property/field filters:
+By default, MapZilla tries to map every public property/field. You can filter out properties/fields with the property/field filters:
 
 ```c#
 var configuration = new MapperConfiguration(cfg =>
@@ -193,7 +193,7 @@ var configuration = new MapperConfiguration(cfg =>
 
 ## Configuring visibility
 
-By default, AutoMapper only recognizes public members. It can map to private setters, but will skip internal/private methods and properties if the entire property is private/internal. To instruct AutoMapper to recognize members with other visibilities, override the default filters ShouldMapField and/or ShouldMapProperty :
+By default, MapZilla only recognizes public members. It can map to private setters, but will skip internal/private methods and properties if the entire property is private/internal. To instruct MapZilla to recognize members with other visibilities, override the default filters ShouldMapField and/or ShouldMapProperty :
 
 ```c#
 var configuration = new MapperConfiguration(cfg =>
@@ -208,7 +208,7 @@ Map configurations will now recognize internal/private members.
 
 ## Configuration compilation
 
-Because expression compilation can be a bit resource intensive, AutoMapper lazily compiles the type map plans on first map. However, this behavior is not always desirable, so you can tell AutoMapper to compile its mappings directly:
+Because expression compilation can be a bit resource intensive, MapZilla lazily compiles the type map plans on first map. However, this behavior is not always desirable, so you can tell MapZilla to compile its mappings directly:
 
 ```c#
 var configuration = new MapperConfiguration(cfg => {});

@@ -24,7 +24,7 @@ public class Destination
 }
 ```
 
-If we were to try and map these two types as-is, AutoMapper would throw an exception (at map time and configuration-checking time), as AutoMapper does not know about any mapping from string to int, DateTime or Type.  To create maps for these types, we must supply a custom type converter, and we have three ways of doing so:
+If we were to try and map these two types as-is, MapZilla would throw an exception (at map time and configuration-checking time), as MapZilla does not know about any mapping from string to int, DateTime or Type.  To create maps for these types, we must supply a custom type converter, and we have three ways of doing so:
 
 ```c#
 void ConvertUsing(Func<TSource, TDestination> mappingFunction);
@@ -41,7 +41,7 @@ public interface ITypeConverter<in TSource, TDestination>
 }
 ```
 
-And supply AutoMapper with either an instance of a custom type converter, or simply the type, which AutoMapper will instantiate at run time.  The mapping configuration for our above source/destination types then becomes:
+And supply MapZilla with either an instance of a custom type converter, or simply the type, which MapZilla will instantiate at run time.  The mapping configuration for our above source/destination types then becomes:
 
 ```c#
 [Test]
@@ -59,7 +59,7 @@ public void Example()
     {
         Value1 = "5",
         Value2 = "01/01/2000",
-        Value3 = "AutoMapperSamples.GlobalTypeConverters.GlobalTypeConverters+Destination"
+        Value3 = "MapZillaSamples.GlobalTypeConverters.GlobalTypeConverters+Destination"
     };
 
     Destination result = mapper.Map<Source, Destination>(source);
@@ -85,4 +85,4 @@ public class TypeTypeConverter : ITypeConverter<string, Type>
 
 In the first mapping, from string to Int32, we simply use the built-in Convert.ToInt32 function (supplied as a method group).  The next two use custom ITypeConverter implementations.
 
-The real power of custom type converters is that they are used any time AutoMapper finds the source/destination pairs on any mapped types.  We can build a set of custom type converters, on top of which other mapping configurations use, without needing any extra configuration.  In the above example, we never have to specify the string/int conversion again.  Where as [Custom Value Resolvers](Custom-value-resolvers.html) have to be configured at a type member level, custom type converters are global in scope.
+The real power of custom type converters is that they are used any time MapZilla finds the source/destination pairs on any mapped types.  We can build a set of custom type converters, on top of which other mapping configurations use, without needing any extra configuration.  In the above example, we never have to specify the string/int conversion again.  Where as [Custom Value Resolvers](Custom-value-resolvers.html) have to be configured at a type member level, custom type converters are global in scope.

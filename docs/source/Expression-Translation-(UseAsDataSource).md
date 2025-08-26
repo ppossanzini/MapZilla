@@ -1,6 +1,6 @@
 # Expression Translation (UseAsDataSource)
 
-Automapper supports translating Expressions from one object to another in a separate [package](https://www.nuget.org/packages/AutoMapper.Extensions.ExpressionMapping/).
+MapZilla supports translating Expressions from one object to another in a separate [package](https://www.nuget.org/packages/MapZilla.Extensions.ExpressionMapping/).
 This is done by substituting the properties from the source class to what they map to in the destination class.
 
 Given the example classes:
@@ -49,7 +49,7 @@ var expression = mapper.Map<Expression<Func<OrderLine, bool>>>(dtoExpression);
 
 Expression will be translated to `ol => ol.Item.Name.StartsWith("A")`
 
-Automapper knows `dto.Item` is mapped to `ol.Item.Name` so it substituted it for the expression.
+MapZilla knows `dto.Item` is mapped to `ol.Item.Name` so it substituted it for the expression.
 
 Expression translation can work on expressions of collections as well.
 
@@ -62,7 +62,7 @@ Resulting in `ols => ols.Where(ol => ol.Quantity > 5).OrderBy(ol => ol.Quantity)
 
 ### Mapping Flattened Properties to Navigation Properties
 
-AutoMapper also supports mapping flattened (TModel or DTO) properties in expressions to their corresponding (TData) navigation properties (when the navigation property has been removed from the view model or DTO) e.g. CourseModel.DepartmentName from the model expression becomes Course.Department in the data expression.
+MapZilla also supports mapping flattened (TModel or DTO) properties in expressions to their corresponding (TData) navigation properties (when the navigation property has been removed from the view model or DTO) e.g. CourseModel.DepartmentName from the model expression becomes Course.Department in the data expression.
 
 Take the following set of classes:
 

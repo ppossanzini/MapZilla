@@ -4,19 +4,19 @@
 
 ### ASP.NET Core
 
-There is a [NuGet package](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/) to be used with the default injection mechanism described [here](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection) and used in [this project](https://github.com/jbogard/ContosoUniversityCore/blob/master/src/ContosoUniversityCore/Startup.cs).
+There is a [NuGet package](https://www.nuget.org/packages/MapZilla.Extensions.Microsoft.DependencyInjection/) to be used with the default injection mechanism described [here](https://github.com/MapZilla/MapZilla.Extensions.Microsoft.DependencyInjection) and used in [this project](https://github.com/jbogard/ContosoUniversityCore/blob/master/src/ContosoUniversityCore/Startup.cs).
 
-Starting with version 13.0, `AddAutoMapper` is part of the core package and the DI package is discontinued.
+Starting with version 13.0, `AddMapZilla` is part of the core package and the DI package is discontinued.
 
-You define the configuration using [profiles](Configuration.html#profile-instances). And then you let AutoMapper know in what assemblies are those profiles defined by calling the `IServiceCollection` extension method `AddAutoMapper` at startup:
+You define the configuration using [profiles](Configuration.html#profile-instances). And then you let MapZilla know in what assemblies are those profiles defined by calling the `IServiceCollection` extension method `AddMapZilla` at startup:
 ```c#
-services.AddAutoMapper(profileAssembly1, profileAssembly2 /*, ...*/);
+services.AddMapZilla(profileAssembly1, profileAssembly2 /*, ...*/);
 ```
 or marker types:
 ```c#
-services.AddAutoMapper(typeof(ProfileTypeFromAssembly1), typeof(ProfileTypeFromAssembly2) /*, ...*/);
+services.AddMapZilla(typeof(ProfileTypeFromAssembly1), typeof(ProfileTypeFromAssembly2) /*, ...*/);
 ```
-Now you can inject AutoMapper at runtime into your services/controllers:
+Now you can inject MapZilla at runtime into your services/controllers:
 ```c#
 public class EmployeesController {
 	private readonly IMapper _mapper;
@@ -28,15 +28,15 @@ public class EmployeesController {
 ```
 ### AutoFac
 
-There is a third-party [NuGet package](https://www.nuget.org/packages/AutoMapper.Contrib.Autofac.DependencyInjection) you might want to try.
+There is a third-party [NuGet package](https://www.nuget.org/packages/MapZilla.Contrib.Autofac.DependencyInjection) you might want to try.
 
-Also, check [this blog](https://dotnetfalcon.com/autofac-support-for-automapper/).
+Also, check [this blog](https://dotnetfalcon.com/autofac-support-for-MapZilla/).
 
-### [Other DI engines](https://github.com/AutoMapper/AutoMapper/wiki/DI-examples)
+### [Other DI engines](https://github.com/MapZilla/MapZilla/wiki/DI-examples)
 
 ## Low level API-s
 
-AutoMapper supports the ability to construct [Custom Value Resolvers](Custom-value-resolvers.html), [Custom Type Converters](Custom-type-converters.html), and [Value Converters](Value-converters.html) using static service location:
+MapZilla supports the ability to construct [Custom Value Resolvers](Custom-value-resolvers.html), [Custom Type Converters](Custom-type-converters.html), and [Value Converters](Value-converters.html) using static service location:
 
 ```c#
 var configuration = new MapperConfiguration(cfg =>

@@ -58,7 +58,7 @@ dotnet add package MapZilla
 ```
 
 ### Do you have an issue?
-
+\
 First check if it's already fixed by trying the [MyGet build](https://MapZilla.readthedocs.io/en/latest/The-MyGet-build.html).
 
 You might want to know exactly what [your mapping does](https://MapZilla.readthedocs.io/en/latest/Understanding-your-mapping.html) at runtime.

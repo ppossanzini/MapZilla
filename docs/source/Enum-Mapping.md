@@ -1,6 +1,6 @@
-# AutoMapper.Extensions.EnumMapping
+# MapZilla.Extensions.EnumMapping
 
-The built-in enum mapper is not configurable, it can only be replaced. Alternatively, AutoMapper supports convention based mapping of enum values in a separate package [AutoMapper.Extensions.EnumMapping](https://www.nuget.org/packages/AutoMapper.Extensions.EnumMapping/).
+The built-in enum mapper is not configurable, it can only be replaced. Alternatively, MapZilla supports convention based mapping of enum values in a separate package [MapZilla.Extensions.EnumMapping](https://www.nuget.org/packages/MapZilla.Extensions.EnumMapping/).
 
 ### Usage
 
@@ -11,7 +11,7 @@ If you want to change some mappings, then you can use `MapValue` method. This is
 Default the enum values are mapped by value (explicitly: `MapByValue()`), but it is possible to map by name calling  `MapByName()`.
 
 ```c#
-using AutoMapper.Extensions.EnumMapping;
+using MapZilla.Extensions.EnumMapping;
 
 public enum Source
 {
@@ -43,7 +43,7 @@ internal class YourProfile : Profile
 
 ### Default Convention
 
-The package [AutoMapper.Extensions.EnumMapping](https://www.nuget.org/packages/AutoMapper.Extensions.EnumMapping/) will map all values from Source type to Destination type if both enum types have the same value (or by name or by value). All Source enum values which have no Target equivalent, will throw an exception if EnumMappingValidation is enabled.
+The package [MapZilla.Extensions.EnumMapping](https://www.nuget.org/packages/MapZilla.Extensions.EnumMapping/) will map all values from Source type to Destination type if both enum types have the same value (or by name or by value). All Source enum values which have no Target equivalent, will throw an exception if EnumMappingValidation is enabled.
 
 ### ReverseMap Convention
 
@@ -78,7 +78,7 @@ The following steps determines the reversed overrides:
 
 ### Testing
 
-[AutoMapper](https://www.nuget.org/packages/AutoMapper/) provides a nice tooling for validating typemaps. This package adds an extra `EnumMapperConfigurationExpressionExtensions.EnableEnumMappingValidation` extension method to extend the existing `AssertConfigurationIsValid()` method to validate also the enum mappings.
+[MapZilla](https://www.nuget.org/packages/MapZilla/) provides a nice tooling for validating typemaps. This package adds an extra `EnumMapperConfigurationExpressionExtensions.EnableEnumMappingValidation` extension method to extend the existing `AssertConfigurationIsValid()` method to validate also the enum mappings.
 
 To enable testing the enum mapping configuration:
 
