@@ -70,8 +70,5 @@ If you're still running into problems, file an issue above.
 This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behavior in our community.
 For more information see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
 
-MapZilla is Copyright &copy; 2009 [Jimmy Bogard](https://jimmybogard.com) and other contributors under the [MIT license](https://github.com/MapZilla/MapZilla?tab=MIT-1-ov-file#MIT-1-ov-file).
-
-### .NET Foundation
-
-This project is supported by the [.NET Foundation](https://dotnetfoundation.org).
+MapZilla is Copyright &copy; 2025 [Paolo Possanzini] and other contributors under the [MIT license](https://github.com/MapZilla/MapZilla?tab=MIT-1-ov-file#MIT-1-ov-file).
+MapZilla is a Derivate Work of AutoMapper from [Jimmy Bogard](https://jimmybogard.com)
