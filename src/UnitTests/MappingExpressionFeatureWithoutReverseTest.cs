@@ -1,5 +1,6 @@
 ﻿using MapZilla;
 using MapZilla.Features;
+using MapZilla.Internal;
 
 namespace MapZilla.UnitTests;
 

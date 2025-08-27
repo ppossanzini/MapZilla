@@ -1,4 +1,5 @@
-﻿using MapZilla;
+﻿using System.Linq.Expressions;
+using MapZilla;
 
 namespace MapZilla.UnitTests.Constructors;
 public class RecordConstructorValidation : MapZillaSpecBase

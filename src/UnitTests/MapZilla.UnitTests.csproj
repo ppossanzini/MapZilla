@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>true</ImplicitUsings>
     <NoWarn>$(NoWarn);649;618</NoWarn>
   </PropertyGroup>
 

@@ -1,4 +1,5 @@
 ﻿using MapZilla;
+using MapZilla.Internal;
 using StringDictionary = System.Collections.Generic.Dictionary<string, object>;
 
 namespace MapZilla.UnitTests.Mappers;

@@ -1,6 +1,7 @@
 using System.Collections.Specialized;
 using System.Collections.Immutable;
 using MapZilla;
+using MapZilla.Internal;
 
 namespace MapZilla.UnitTests;
 public class UnsupportedCollection : MapZillaSpecBase

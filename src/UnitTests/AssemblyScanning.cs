@@ -1,4 +1,5 @@
-﻿using MapZilla;
+﻿using System.Reflection;
+using MapZilla;
 
 namespace MapZilla.UnitTests
 {

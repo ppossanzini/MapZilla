@@ -1,4 +1,5 @@
-﻿using MapZilla;
+﻿using System.ComponentModel;
+using MapZilla;
 
 namespace MapZilla.UnitTests.Bug;
 public class ListSourceMapperBug

@@ -1,3 +1,5 @@
+using MapZilla.Internal;
+
 namespace MapZilla.UnitTests.Mappers;
 
 public class TypeHelperTests

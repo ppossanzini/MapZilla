@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using MapZilla.Internal;
 using MapZilla.UnitTests;
 namespace MapZilla.Tests;
 public class CreateProjectionEnum : MapZillaSpecBase

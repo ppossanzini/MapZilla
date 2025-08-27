@@ -1,4 +1,5 @@
 ﻿using MapZilla;
+using MapZilla.QueryableExtensions;
 
 namespace MapZilla.UnitTests.Projection
 {

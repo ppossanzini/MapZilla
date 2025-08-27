@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using MapZilla.Execution;
+using MapZilla.Internal;
 
 namespace MapZilla.UnitTests;
 

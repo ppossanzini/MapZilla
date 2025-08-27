@@ -1,4 +1,5 @@
 ﻿using MapZilla;
+using MapZilla.Internal;
 
 namespace MapZilla.UnitTests.ForAllMembers;
 public class When_conditionally_applying_a_resolver_globally : MapZillaSpecBase

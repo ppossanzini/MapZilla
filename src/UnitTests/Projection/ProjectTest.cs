@@ -1,4 +1,6 @@
 ﻿using MapZilla;
+using MapZilla.Internal;
+using MapZilla.QueryableExtensions;
 
 namespace MapZilla.UnitTests.Projection;
 public class ProjectWithFields : MapZillaSpecBase

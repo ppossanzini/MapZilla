@@ -1,5 +1,7 @@
-﻿using MapZilla;
+﻿using System.Reflection;
+using MapZilla;
 using MapZilla.Configuration.Conventions;
+using MapZilla.Internal;
 
 namespace MapZilla.UnitTests;
 

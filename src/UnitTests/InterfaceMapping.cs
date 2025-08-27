@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using MapZilla;
 
 namespace MapZilla.UnitTests.InterfaceMapping;

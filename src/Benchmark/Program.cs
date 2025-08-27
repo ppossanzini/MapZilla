@@ -1,4 +1,6 @@
-﻿using Benchmark.Flattening;
+﻿using System;
+using System.Collections.Generic;
+using Benchmark.Flattening;
 
 namespace Benchmark;
 

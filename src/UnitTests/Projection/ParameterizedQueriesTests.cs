@@ -1,4 +1,6 @@
-﻿using MapZilla;
+﻿using System.Linq.Expressions;
+using MapZilla;
+using MapZilla.QueryableExtensions;
 
 namespace MapZilla.UnitTests.Projection;
 public class ParameterizedQueriesTests_with_anonymous_object_and_factory : MapZillaSpecBase

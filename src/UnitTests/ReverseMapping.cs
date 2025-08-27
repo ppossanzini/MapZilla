@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using MapZilla;
+using MapZilla.Internal;
 
 namespace MapZilla.UnitTests;
 
