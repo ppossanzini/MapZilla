@@ -1,4 +1,5 @@
 ﻿using MapZilla;
+using MapZilla.Internal;
 using Microsoft.Extensions.DependencyInjection;
 
 IServiceCollection services = new ServiceCollection();
